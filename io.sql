@@ -51,4 +51,10 @@ CREATE TABLE Trenerzy(
 	[NrBankowy] [nvarchar](40)  NULL,
 	PRIMARY KEY(IDTrener)
 	);
+CREATE TABLE Zajecia(
+	[IDZajecia] [int] NOT NULL,
+	[Nazwa] [nvarchar](30) NOT NULL,
+	[Godzina] [time](7) NOT NULL,
+	PRIMARY KEY(IDZajecia)
+	); 
 
