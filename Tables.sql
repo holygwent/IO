@@ -2,10 +2,6 @@ CREATE TABLE Administrator(
 	[Login] [nvarchar](30)  NULL,
 	[Haslo] [nvarchar](30)  NULL
 );
-CREATE TABLE Administrator(
-	[Login] [nvarchar](30)  NULL,
-	[Haslo] [nvarchar](30)  NULL
-);
 CREATE TABLE Klienci(
 	[IDKlienta] [int]  NOT NULL,
 	[Imie] [nvarchar](30)  NULL,
@@ -61,4 +57,3 @@ CREATE TABLE Zajecia(
 	[Godzina] [time](7) NOT NULL,
 	PRIMARY KEY(IDZajecia)
 	); 
-
