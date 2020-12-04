@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KlientController.cs" />
+    <Compile Include="Controllers\PracownicyController.cs" />
     <Compile Include="Controllers\TrenerController.cs" />
     <Compile Include="Controllers\ZajeciaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +235,11 @@
     <Content Include="Views\Zajecia\Details.cshtml" />
     <Content Include="Views\Zajecia\Edit.cshtml" />
     <Content Include="Views\Zajecia\Index.cshtml" />
+    <Content Include="Views\Pracownicy\Create.cshtml" />
+    <Content Include="Views\Pracownicy\Delete.cshtml" />
+    <Content Include="Views\Pracownicy\Details.cshtml" />
+    <Content Include="Views\Pracownicy\Edit.cshtml" />
+    <Content Include="Views\Pracownicy\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
