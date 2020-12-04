@@ -1,7 +1,9 @@
 # IO
 
 tworzymy projekt na IO!!!!<br>
-edytowane przez darka
-edytowane przez marka
-edytowane przez mateusza
 
+
+
+edytowane przez darka<br>
+edytowane przez marka<br>
+edytowane przez mateusza<br>
