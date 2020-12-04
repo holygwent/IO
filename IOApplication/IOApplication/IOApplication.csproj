@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KlientController.cs" />
     <Compile Include="Controllers\TrenerController.cs" />
+    <Compile Include="Controllers\ZajeciaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,6 +229,11 @@
     <Content Include="Views\Trener\Details.cshtml" />
     <Content Include="Views\Trener\Edit.cshtml" />
     <Content Include="Views\Trener\Index.cshtml" />
+    <Content Include="Views\Zajecia\Create.cshtml" />
+    <Content Include="Views\Zajecia\Delete.cshtml" />
+    <Content Include="Views\Zajecia\Details.cshtml" />
+    <Content Include="Views\Zajecia\Edit.cshtml" />
+    <Content Include="Views\Zajecia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
