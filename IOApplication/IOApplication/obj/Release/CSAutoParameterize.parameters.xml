@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="SiłowniaEntities-Web.config Connection String" description="SiłowniaEntities Parametry połączenia używane w pliku web.config przez aplikację w celu uzyskiwania dostępu do bazy danych." defaultValue="metadata=res://*/Models.Silownia.csdl|res://*/Models.Silownia.ssdl|res://*/Models.Silownia.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=io-serwer.database.windows.net;initial catalog=Siłownia;user id=dc055881;password=Silownia123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\48502\\source\\repos\\IOWlasciwe\\IOApplication\\IOApplication\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SiłowniaEntities']/@connectionString" />
+  </parameter>
+</parameters>

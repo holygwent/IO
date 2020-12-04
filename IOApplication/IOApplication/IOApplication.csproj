@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KlientController.cs" />
+    <Compile Include="Controllers\TrenerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,6 +223,11 @@
     <Content Include="Views\Klient\Details.cshtml" />
     <Content Include="Views\Klient\Edit.cshtml" />
     <Content Include="Views\Klient\Index.cshtml" />
+    <Content Include="Views\Trener\Create.cshtml" />
+    <Content Include="Views\Trener\Delete.cshtml" />
+    <Content Include="Views\Trener\Details.cshtml" />
+    <Content Include="Views\Trener\Edit.cshtml" />
+    <Content Include="Views\Trener\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
