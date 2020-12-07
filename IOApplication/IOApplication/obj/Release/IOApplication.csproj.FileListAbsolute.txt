@@ -172,3 +172,4 @@ C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\I
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.csproj.CopyComplete
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.dll
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.pdb
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.csprojAssemblyReference.cache
