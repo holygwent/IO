@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista Pracowników</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj Pracownika", "Create")
 </p>
 <table class="table">
     <tr>
@@ -101,9 +101,9 @@
             @Html.DisplayFor(modelItem => item.Haslo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdPracownika }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdPracownika }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdPracownika })
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.IdPracownika }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.IdPracownika }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.IdPracownika })
         </td>
     </tr>
 }
