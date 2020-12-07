@@ -19,33 +19,48 @@ namespace IOApplication.Models
         public int IdKlienta { get; set; }
       
         [Display(Name = "Imiê")]
-
+        [Required(ErrorMessage ="Podaj imiê")]
         public string Imie { get; set; }
         [Display(Name = "Nazwisko")]
+        [Required(ErrorMessage = "Podaj Nazwisko")]
         public string Nazwisko { get; set; }
         [Display(Name = "Adres")]
+        [Required(ErrorMessage = "Podaj Adres")]
         public string Adres { get; set; }
         [Display(Name = "Miasto")]
+        [Required(ErrorMessage = "Podaj Miasto")]
         public string Miasto { get; set; }
         [Display(Name = "Kod Pocztowy")]
+        [Required(ErrorMessage = "Podaj Kod Pocztowy")]
         public string KodPocztowy { get; set; }
         [Display(Name = "Kraj")]
+        [Required(ErrorMessage = "Podaj Kraj")]
         public string Kraj { get; set; }
         [Display(Name = "Telefon")]
+        [Required(ErrorMessage = "Podaj Telefon")]
         public string Telefon { get; set; }
+
         [Display(Name = "Email")]
+        [EmailAddress(ErrorMessage ="Podaj poprawny Email")]
+        [Required(ErrorMessage = "Podaj Email")]
         public string Email { get; set; }   
         [Display(Name = "Data do³adowania")]
+        [Required(ErrorMessage = "Podaj Date")]
+        [DataType(DataType.Date)]
         public System.DateTime DataDoladowania { get; set; }
         [Display(Name = "Karnet")]
+        [Required(ErrorMessage = "Podaj Karnet")]
         public int Karnet { get; set; }
         [Display(Name = "Data wygaœniêcia")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DataWygasniecia { get; set; }
         [Display(Name = "Zajêcia")]
         public int IdZajecia { get; set; }
         [Display(Name = "Login")]
+        [Required(ErrorMessage = "Podaj Login")]
         public string Login { get; set; }
         [Display(Name = "Has³o")]
+        [DataType(DataType.Password)]
         public string Haslo { get; set; }
     
         public virtual Zajecia Zajecia { get; set; }
