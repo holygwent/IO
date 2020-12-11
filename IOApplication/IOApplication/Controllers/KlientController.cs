@@ -53,10 +53,10 @@ namespace IOApplication.Controllers
             if (ModelState.IsValid)
             {
                 db.Klient.Add(klient);
-                if(klient.DataWygasniecia == null )
-                {
-                    klient.DataWygasniecia = klient.DataDoladowania.AddDays(klient.Karnet);
-                }
+
+                klient.DataDoladowania = DateTime.Now;
+                klient.DataWygasniecia = klient.DataDoladowania.AddDays(klient.Karnet);
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
