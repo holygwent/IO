@@ -15,11 +15,36 @@ namespace IOApplication.Controllers
         private SiłowniaEntities db = new SiłowniaEntities();
 
         // GET: Pracownicy
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
             var collection = from p in db.Pracownicy
                              orderby p.Nazwisko ascending, p.Imie ascending
+                             where p != null
                              select p;
+
+            if (!string.IsNullOrEmpty(searching))
+            {
+                string[] tab = new string[2];
+                string firstName, lastName;
+                tab = searching.Split(' ');
+                firstName = tab[0];
+                lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
+
+                collection = from p in db.Pracownicy
+                             orderby p.Nazwisko ascending, p.Imie ascending
+                             where p.Nazwisko == lastName && p.Imie == firstName
+                             select p;
+                if (collection.ToList().Count == 0)
+                {
+                    firstName = tab[1];
+                    lastName = tab[0];
+                    collection = from p in db.Pracownicy
+                                 orderby p.Nazwisko ascending, p.Imie ascending
+                                 where p.Nazwisko == lastName && p.Imie == firstName
+                                 select p;
+                }
+            }
+
             return View(collection.ToList());
         }
 
