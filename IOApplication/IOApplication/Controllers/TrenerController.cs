@@ -17,8 +17,11 @@ namespace IOApplication.Controllers
         // GET: Trener
         public ActionResult Index()
         {
-            var trener = db.Trener.Include(t => t.Zajecia);
-            return View(trener.ToList());
+            // var trener = db.Trener.Include(t => t.Zajecia);
+            var collection = from t in db.Trener.Include(t => t.Zajecia)
+                             orderby t.Nazwisko ascending, t.Imie ascending
+                             select t;
+            return View(collection.ToList());
         }
 
         // GET: Trener/Details/5
