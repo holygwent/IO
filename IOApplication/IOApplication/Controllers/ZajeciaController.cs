@@ -15,10 +15,15 @@ namespace IOApplication.Controllers
         private SiłowniaEntities db = new SiłowniaEntities();
 
         // GET: Zajecia
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
             var collection = db.Zajecia.OrderBy(z => z.Nazwa);
-            return View(collection.ToList());
+            if (!string.IsNullOrEmpty(searching))
+            {
+                collection = db.Zajecia.Where(z => z.Nazwa == searching).OrderBy(z => z.Nazwa);
+            }
+
+                return View(collection.ToList());
         }
 
         // GET: Zajecia/Details/5
