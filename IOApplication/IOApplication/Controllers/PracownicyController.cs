@@ -17,7 +17,10 @@ namespace IOApplication.Controllers
         // GET: Pracownicy
         public ActionResult Index()
         {
-            return View(db.Pracownicy.ToList());
+            var collection = from p in db.Pracownicy
+                             orderby p.Nazwisko ascending, p.Imie ascending
+                             select p;
+            return View(collection.ToList());
         }
 
         // GET: Pracownicy/Details/5
