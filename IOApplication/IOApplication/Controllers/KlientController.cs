@@ -24,7 +24,17 @@ namespace IOApplication.Controllers
                              ;
             return View(collection.ToList());
         }
-
+        // GET: Klient
+        public ActionResult FiltrLapsed()
+        {
+            //   var klient = db.Klient.Include(k => k.Zajecia);
+            var collection = from k in db.Klient.Include(k => k.Zajecia)
+                             orderby k.Nazwisko ascending, k.Imie ascending
+                             where k.DataWygasniecia < DateTime.Now
+                             select k
+                             ;
+            return View(collection.ToList());
+        }
         // GET: Klient/Details/5
         public ActionResult Details(int? id)
         {
