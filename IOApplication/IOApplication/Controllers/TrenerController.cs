@@ -15,12 +15,37 @@ namespace IOApplication.Controllers
         private SiłowniaEntities db = new SiłowniaEntities();
 
         // GET: Trener
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
             // var trener = db.Trener.Include(t => t.Zajecia);
             var collection = from t in db.Trener.Include(t => t.Zajecia)
                              orderby t.Nazwisko ascending, t.Imie ascending
+                             where t != null
                              select t;
+
+            if (!string.IsNullOrEmpty(searching))
+            {
+                string[] tab = new string[2];
+                string firstName, lastName;
+                tab = searching.Split(' ');
+                firstName = tab[0];
+                lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
+
+                collection = from t in db.Trener.Include(t => t.Zajecia)
+                             orderby t.Nazwisko ascending, t.Imie ascending
+                             where t.Nazwisko == lastName && t.Imie == firstName
+                             select t;
+                if (collection.ToList().Count == 0)
+                {
+                    firstName = tab[1];
+                    lastName = tab[0];
+                    collection = from t in db.Trener.Include(t => t.Zajecia)
+                                 orderby t.Nazwisko ascending, t.Imie ascending
+                                 where t.Nazwisko == lastName && t.Imie == firstName
+                                 select t;
+                }
+            }
+
             return View(collection.ToList());
         }
 
