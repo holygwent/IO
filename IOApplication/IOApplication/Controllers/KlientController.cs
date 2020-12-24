@@ -15,13 +15,36 @@ namespace IOApplication.Controllers
         private SiłowniaEntities db = new SiłowniaEntities();
 
         // GET: Klient
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
          //   var klient = db.Klient.Include(k => k.Zajecia);
             var collection = from k in db.Klient.Include(k => k.Zajecia)
                              orderby k.Nazwisko ascending,k.Imie ascending
+                             where k!= null
                              select k
                              ;
+            if (!string.IsNullOrEmpty(searching))
+            {
+                string[] tab = new string[2];
+                string firstName, lastName;
+                tab = searching.Split(' ');
+                firstName = tab[0];
+                lastName = tab[1];
+
+                collection = from k in db.Klient.Include(k => k.Zajecia)
+                             orderby k.Nazwisko ascending, k.Imie ascending
+                             where k.Nazwisko == lastName && k.Imie == firstName
+                             select k;
+                if (collection.ToList().Count == 0)
+                {
+                    firstName = tab[1];
+                    lastName = tab[0];
+                    collection = from k in db.Klient.Include(k => k.Zajecia)
+                                 orderby k.Nazwisko ascending, k.Imie ascending
+                                 where k.Nazwisko == lastName && k.Imie == firstName
+                                 select k;
+                }
+            }
             return View(collection.ToList());
         }
         // GET: Klient
