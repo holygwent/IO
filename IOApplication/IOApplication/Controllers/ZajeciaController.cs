@@ -17,7 +17,8 @@ namespace IOApplication.Controllers
         // GET: Zajecia
         public ActionResult Index()
         {
-            return View(db.Zajecia.ToList());
+            var collection = db.Zajecia.OrderBy(z => z.Nazwa);
+            return View(collection.ToList());
         }
 
         // GET: Zajecia/Details/5
