@@ -29,7 +29,7 @@ namespace IOApplication.Controllers
                 string firstName, lastName;
                 tab = searching.Split(' ');
                 firstName = tab[0];
-                lastName = tab[1];
+                lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
 
                 collection = from k in db.Klient.Include(k => k.Zajecia)
                              orderby k.Nazwisko ascending, k.Imie ascending

@@ -6,10 +6,20 @@
 
 <h2>Lista Klientów</h2>
 
-<p>
+<div>
     @Html.ActionLink("Dodaj Klienta", "Create")
     <span style="padding-left:30px;">  @Html.ActionLink("Pokaz Wygasły Karnet", "FiltrLapsed")</span>
-</p>
+</div>
+<div>
+    @using (Html.BeginForm("Index", "Klient", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść","Index")</button>
+
+    }
+</div>
+
 <table class="table">
     <tr>
         <th>
