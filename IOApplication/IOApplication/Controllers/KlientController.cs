@@ -17,8 +17,12 @@ namespace IOApplication.Controllers
         // GET: Klient
         public ActionResult Index()
         {
-            var klient = db.Klient.Include(k => k.Zajecia);
-            return View(klient.ToList());
+         //   var klient = db.Klient.Include(k => k.Zajecia);
+            var collection = from k in db.Klient.Include(k => k.Zajecia)
+                             orderby k.Nazwisko ascending,k.Imie ascending
+                             select k
+                             ;
+            return View(collection.ToList());
         }
 
         // GET: Klient/Details/5
