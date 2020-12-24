@@ -240,6 +240,7 @@
     <Content Include="Views\Pracownicy\Details.cshtml" />
     <Content Include="Views\Pracownicy\Edit.cshtml" />
     <Content Include="Views\Pracownicy\Index.cshtml" />
+    <Content Include="Views\Klient\FiltrLapsed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
