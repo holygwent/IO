@@ -27,6 +27,14 @@ namespace IOApplication.Controllers
                 string[] tab = new string[2];
                 string firstName, lastName;
                 tab = searching.Split(' ');
+                if (tab[1] == null)
+                {
+                    tab[1] = " ";
+                }
+                else if (tab[0] == null)
+                {
+                    tab[0] = " ";
+                }
                 firstName = tab[0];
                 lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
 
