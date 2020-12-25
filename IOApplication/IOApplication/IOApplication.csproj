@@ -139,6 +139,9 @@
     <Compile Include="Models\Administrator.cs">
       <DependentUpon>Silownia.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Karnet.cs">
+      <DependentUpon>Silownia.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Klient.cs">
       <DependentUpon>Silownia.tt</DependentUpon>
     </Compile>
@@ -220,10 +223,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Klient\Create.cshtml" />
-    <Content Include="Views\Klient\Delete.cshtml" />
-    <Content Include="Views\Klient\Details.cshtml" />
-    <Content Include="Views\Klient\Edit.cshtml" />
     <Content Include="Views\Klient\Index.cshtml" />
     <Content Include="Views\Trener\Create.cshtml" />
     <Content Include="Views\Trener\Delete.cshtml" />
@@ -241,9 +240,14 @@
     <Content Include="Views\Pracownicy\Edit.cshtml" />
     <Content Include="Views\Pracownicy\Index.cshtml" />
     <Content Include="Views\Klient\FiltrLapsed.cshtml" />
+    <Content Include="Views\Klient\Delete.cshtml" />
+    <Content Include="Views\Klient\Edit.cshtml" />
+    <Content Include="Views\Klient\Create.cshtml" />
+    <Content Include="Views\Klient\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Karnet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -30,5 +30,6 @@ namespace IOApplication.Models
         public virtual DbSet<Pracownicy> Pracownicy { get; set; }
         public virtual DbSet<Trener> Trener { get; set; }
         public virtual DbSet<Zajecia> Zajecia { get; set; }
+        public virtual DbSet<Karnet> Karnet { get; set; }
     }
 }

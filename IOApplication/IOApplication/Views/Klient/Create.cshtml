@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Dodaj Klienta</h2>
+<h2>Dodaj klienta</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Klient</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -79,16 +79,17 @@
             </div>
         </div>
 
-       
+        
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Karnet, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Karnet, "Karnet", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Karnet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Karnet", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Karnet, "", new { @class = "text-danger" })
             </div>
         </div>
 
+  
 
         <div class="form-group">
             @Html.LabelFor(model => model.IdZajecia, "IdZajecia", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -116,7 +117,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Dodaj" class="btn btn-default" />
+                <input type="submit" value="dodaj" class="btn btn-default" />
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ namespace IOApplication.Controllers
         public ActionResult Index(string searching)
         {
          //   var klient = db.Klient.Include(k => k.Zajecia);
-            var collection = from k in db.Klient.Include(k => k.Zajecia)
+            var collection = from k in db.Klient.Include(k => k.Zajecia).Include(k=>k.Karnet1)
                              orderby k.Nazwisko ascending,k.Imie ascending
                              where k!= null
                              select k
@@ -39,7 +39,7 @@ namespace IOApplication.Controllers
                 firstName = tab[0];
                 lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
 
-                collection = from k in db.Klient.Include(k => k.Zajecia)
+                collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
                              orderby k.Nazwisko ascending, k.Imie ascending
                              where k.Nazwisko == lastName && k.Imie == firstName
                              select k;
@@ -47,7 +47,7 @@ namespace IOApplication.Controllers
                 {
                     firstName = tab[1];
                     lastName = tab[0];
-                    collection = from k in db.Klient.Include(k => k.Zajecia)
+                    collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
                                  orderby k.Nazwisko ascending, k.Imie ascending
                                  where k.Nazwisko == lastName && k.Imie == firstName
                                  select k;
@@ -59,7 +59,7 @@ namespace IOApplication.Controllers
         public ActionResult FiltrLapsed()
         {
             //   var klient = db.Klient.Include(k => k.Zajecia);
-            var collection = from k in db.Klient.Include(k => k.Zajecia)
+            var collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
                              orderby k.Nazwisko ascending, k.Imie ascending
                              where k.DataWygasniecia < DateTime.Now
                              select k
@@ -85,6 +85,7 @@ namespace IOApplication.Controllers
         public ActionResult Create()
         {
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa");
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni");
             return View();
         }
 
@@ -95,18 +96,25 @@ namespace IOApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdKlienta,Imie,Nazwisko,Adres,Miasto,KodPocztowy,Kraj,Telefon,Email,DataDoladowania,Karnet,DataWygasniecia,IdZajecia,Login,Haslo")] Klient klient)
         {
+          
             if (ModelState.IsValid)
             {
                 db.Klient.Add(klient);
 
                 klient.DataDoladowania = DateTime.Now;
-                klient.DataWygasniecia = klient.DataDoladowania.AddDays(klient.Karnet);
+                var Listdays = from k in db.Karnet
+                                 where k.Id == klient.Karnet
+                                 select (double)k.Dni;
+                
+                
+                klient.DataWygasniecia = klient.DataDoladowania.AddDays(Listdays.First());
                 
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa", klient.IdZajecia);
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni", klient.Karnet);//tu
             return View(klient);
         }
 
@@ -123,6 +131,8 @@ namespace IOApplication.Controllers
                 return HttpNotFound();
             }
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa", klient.IdZajecia);
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni", klient.Karnet);
+          
             return View(klient);
         }
 
@@ -136,10 +146,18 @@ namespace IOApplication.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(klient).State = EntityState.Modified;
+                var Listdays = from k in db.Karnet
+                               where k.Id == klient.Karnet
+                               select (double)k.Dni;
+
+
+                klient.DataWygasniecia = klient.DataDoladowania.AddDays(Listdays.First());
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa", klient.IdZajecia);
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni", klient.Karnet);
             return View(klient);
         }
 

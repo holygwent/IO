@@ -12,14 +12,13 @@ namespace IOApplication.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Klient
     {
         [Display(Name = "ID Klienta")]
         public int IdKlienta { get; set; }
-      
-        [Display(Name = "Imiê")]
-        [Required(ErrorMessage ="Podaj imiê")]
+        [Display(Name = "Imie")]
+        [Required(ErrorMessage = "Podaj imie")]
         public string Imie { get; set; }
         [Display(Name = "Nazwisko")]
         [Required(ErrorMessage = "Podaj Nazwisko")]
@@ -39,17 +38,15 @@ namespace IOApplication.Models
         [Display(Name = "Telefon")]
         [Required(ErrorMessage = "Podaj Telefon")]
         public string Telefon { get; set; }
-
         [Display(Name = "Email")]
-        [EmailAddress(ErrorMessage ="Podaj poprawny Email")]
+        [EmailAddress(ErrorMessage = "Podaj poprawny Email")]
         [Required(ErrorMessage = "Podaj Email")]
-        public string Email { get; set; }   
+        public string Email { get; set; }
         [Display(Name = "Data do³adowania")]
         [Required(ErrorMessage = "Podaj Date")]
         [DataType(DataType.Date)]
         public System.DateTime DataDoladowania { get; set; }
         [Display(Name = "Karnet")]
-        [Required(ErrorMessage = "Podaj Karnet")]
         public int Karnet { get; set; }
         [Display(Name = "Data wygaœniêcia")]
         [DataType(DataType.Date)]
@@ -64,5 +61,6 @@ namespace IOApplication.Models
         public string Haslo { get; set; }
     
         public virtual Zajecia Zajecia { get; set; }
+        public virtual Karnet Karnet1 { get; set; }
     }
 }

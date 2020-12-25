@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SiłowniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SiłowniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrator">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,6 +12,14 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Haslo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Karnet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Dni" Type="int" Nullable="false" />
+          <Property Name="Koszt" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Klient">
           <Key>
@@ -80,6 +88,18 @@
           <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Godzina" Type="time" Precision="7" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Klient_ToKarnet">
+          <End Role="Karnet" Type="Self.Karnet" Multiplicity="1" />
+          <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Karnet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Klient">
+              <PropertyRef Name="Karnet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Klient_ToZajecia">
           <End Role="Zajecia" Type="Self.Zajecia" Multiplicity="1" />
           <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
@@ -106,10 +126,15 @@
         </Association>
         <EntityContainer Name="SiłowniaModelStoreContainer">
           <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Karnet" EntityType="Self.Karnet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trener" EntityType="Self.Trener" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zajecia" EntityType="Self.Zajecia" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Klient_ToKarnet" Association="Self.FK_Klient_ToKarnet">
+            <End Role="Karnet" EntitySet="Karnet" />
+            <End Role="Klient" EntitySet="Klient" />
+          </AssociationSet>
           <AssociationSet Name="FK_Klient_ToZajecia" Association="Self.FK_Klient_ToZajecia">
             <End Role="Zajecia" EntitySet="Zajecia" />
             <End Role="Klient" EntitySet="Klient" />
@@ -119,8 +144,7 @@
             <End Role="Trener" EntitySet="Trener" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SiłowniaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -152,6 +176,7 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Haslo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zajecia" Relationship="Self.FK_Klient_ToZajecia" FromRole="Klient" ToRole="Zajecia" />
+          <NavigationProperty Name="Karnet1" Relationship="SiłowniaModel.FK_Klient_ToKarnet" FromRole="Klient" ToRole="Karnet" />
         </EntityType>
         <EntityType Name="Pracownicy">
           <Key>
@@ -241,7 +266,33 @@
             <End Role="Zajecia" EntitySet="Zajecia" />
             <End Role="Trener" EntitySet="Trener" />
           </AssociationSet>
+          <EntitySet Name="Karnet" EntityType="SiłowniaModel.Karnet" />
+          <AssociationSet Name="FK_Klient_ToKarnet" Association="SiłowniaModel.FK_Klient_ToKarnet">
+            <End Role="Karnet" EntitySet="Karnet" />
+            <End Role="Klient" EntitySet="Klient" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Karnet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Dni" Type="Int32" Nullable="false" />
+          <Property Name="Koszt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Klient" Relationship="SiłowniaModel.FK_Klient_ToKarnet" FromRole="Karnet" ToRole="Klient" />
+        </EntityType>
+        <Association Name="FK_Klient_ToKarnet">
+          <End Type="SiłowniaModel.Karnet" Role="Karnet" Multiplicity="1" />
+          <End Type="SiłowniaModel.Klient" Role="Klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Karnet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Klient">
+              <PropertyRef Name="Karnet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -325,6 +376,15 @@
                 <ScalarProperty Name="IdZajecia" ColumnName="IdZajecia" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Godzina" ColumnName="Godzina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Karnet">
+            <EntityTypeMapping TypeName="SiłowniaModel.Karnet">
+              <MappingFragment StoreEntitySet="Karnet">
+                <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
