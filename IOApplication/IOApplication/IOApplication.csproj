@@ -139,6 +139,17 @@
     <Compile Include="Models\Administrator.cs">
       <DependentUpon>Silownia.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CennikModel\Component\Cennik.cs" />
+    <Compile Include="Models\CennikModel\ConcreteComponent\ConcreteComponent.cs" />
+    <Compile Include="Models\CennikModel\ConcreteKarnetDecorator\Days180KarnetDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteKarnetDecorator\Days30KarnetDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteKarnetDecorator\Days360KarnetDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteKarnetDecorator\Days60KarnetDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteZajeciaDecorator\BoksDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteZajeciaDecorator\FitnessDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteZajeciaDecorator\JogaDecorator.cs" />
+    <Compile Include="Models\CennikModel\ConcreteZajeciaDecorator\TaniecDecorator.cs" />
+    <Compile Include="Models\CennikModel\Decorator\CennikDecorator.cs" />
     <Compile Include="Models\Karnet.cs">
       <DependentUpon>Silownia.tt</DependentUpon>
     </Compile>
