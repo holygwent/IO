@@ -25,32 +25,42 @@ namespace IOApplication.Controllers
                              ;
             if (!string.IsNullOrEmpty(searching))
             {
-                string[] tab = new string[2];
-                string firstName, lastName;
-                tab = searching.Split(' ');
-                if(tab[1]==null)
-                {
-                    tab[1] = " ";
-                }
-                else if (tab[0]==null)
-                {
-                    tab[0] = " ";
-                }
-                firstName = tab[0];
-                lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
 
-                collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
-                             orderby k.Nazwisko ascending, k.Imie ascending
-                             where k.Nazwisko == lastName && k.Imie == firstName
-                             select k;
-                if (collection.ToList().Count == 0)
+                if (searching.Contains(' '))
                 {
-                    firstName = tab[1];
-                    lastName = tab[0];
+                    string[] tab = new string[2];
+                    string firstName, lastName;
+                    tab = searching.Split(' ');
+                    if (tab[1] == null)
+                    {
+                        tab[1] = " ";
+                    }
+                    else if (tab[0] == null)
+                    {
+                        tab[0] = " ";
+                    }
+                    firstName = tab[0];
+                    lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
+
                     collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
                                  orderby k.Nazwisko ascending, k.Imie ascending
                                  where k.Nazwisko == lastName && k.Imie == firstName
                                  select k;
+                    if (collection.ToList().Count == 0)
+                    {
+                        firstName = tab[1];
+                        lastName = tab[0];
+                        collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
+                                     orderby k.Nazwisko ascending, k.Imie ascending
+                                     where k.Nazwisko == lastName && k.Imie == firstName
+                                     select k;
+                    }
+                }
+                else
+                {
+                    collection = db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1).Where(x => x.Imie == searching);
+                      if(collection.ToList().Count==0)
+                    collection = db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1).Where(x => x.Nazwisko== searching);
                 }
             }
             return View(collection.ToList());

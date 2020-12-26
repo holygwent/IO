@@ -25,35 +25,45 @@ namespace IOApplication.Controllers
 
             if (!string.IsNullOrEmpty(searching))
             {
-                string[] tab = new string[2];
-                string firstName, lastName;
-                tab = searching.Split(' ');
-                if (tab[1] == null)
+                if (searching.Contains(' '))
                 {
-                    tab[1] = " ";
-                }
-                else if (tab[0] == null)
-                {
-                    tab[0] = " ";
-                }
-                firstName = tab[0];
-                lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
+                    string[] tab = new string[2];
+                    string firstName, lastName;
+                    tab = searching.Split(' ');
+                    if (tab[1] == null)
+                    {
+                        tab[1] = " ";
+                    }
+                    else if (tab[0] == null)
+                    {
+                        tab[0] = " ";
+                    }
+                    firstName = tab[0];
+                    lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
 
-                collection = from t in db.Trener.Include(t => t.Zajecia)
-                             orderby t.Nazwisko ascending, t.Imie ascending
-                             where t.Nazwisko == lastName && t.Imie == firstName
-                             select t;
-                if (collection.ToList().Count == 0)
-                {
-                    firstName = tab[1];
-                    lastName = tab[0];
                     collection = from t in db.Trener.Include(t => t.Zajecia)
                                  orderby t.Nazwisko ascending, t.Imie ascending
                                  where t.Nazwisko == lastName && t.Imie == firstName
                                  select t;
+                    if (collection.ToList().Count == 0)
+                    {
+                        firstName = tab[1];
+                        lastName = tab[0];
+                        collection = from t in db.Trener.Include(t => t.Zajecia)
+                                     orderby t.Nazwisko ascending, t.Imie ascending
+                                     where t.Nazwisko == lastName && t.Imie == firstName
+                                     select t;
+                    }
+                }
+                else
+                {
+                    collection = db.Trener.Include(t => t.Zajecia).Where(x => x.Imie == searching);
+                    if (collection.ToList().Count == 0)
+                    {
+                        collection = db.Trener.Include(t => t.Zajecia).Where(x => x.Nazwisko == searching);
+                    }
                 }
             }
-
             return View(collection.ToList());
         }
 
