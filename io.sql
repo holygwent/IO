@@ -57,3 +57,11 @@ CREATE TABLE Zajecia(
 	[Godzina] [time](7) NOT NULL,
 	PRIMARY KEY(IDZajecia)
 	); 
+CREATE TABLE [dbo].[Karnet] (
+    [Id]    INT NOT NULL,
+    [Dni]   INT NOT NULL,
+    [Koszt] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
