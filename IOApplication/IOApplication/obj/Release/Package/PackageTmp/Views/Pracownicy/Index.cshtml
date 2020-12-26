@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Dodaj Pracownika", "Create")
 </p>
+<div>
+    @using (Html.BeginForm("Index", "Pracownicy", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść", "Index")</button>
+
+    }
+</div>
 <table class="table">
     <tr>
         <th>
