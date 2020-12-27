@@ -21,6 +21,10 @@ namespace IOApplication.Models.CennikModel.ListaCennikow
                 return instance;
             }
         }
+        public ListaCennikow()
+        {
+            counter++;
+        }
         public void DodajDoListy(Cennik c)
         {
             listaCennikow.Add(c);
