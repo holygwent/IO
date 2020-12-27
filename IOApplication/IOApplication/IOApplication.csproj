@@ -150,6 +150,7 @@
     <Compile Include="Models\CennikModel\ConcreteZajeciaDecorator\JogaDecorator.cs" />
     <Compile Include="Models\CennikModel\ConcreteZajeciaDecorator\TaniecDecorator.cs" />
     <Compile Include="Models\CennikModel\Decorator\CennikDecorator.cs" />
+    <Compile Include="Models\CennikModel\ListaCennikow\ListaCennikow.cs" />
     <Compile Include="Models\CennikModel\TablicaCennikow.cs" />
     <Compile Include="Models\Karnet.cs">
       <DependentUpon>Silownia.tt</DependentUpon>
