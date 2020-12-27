@@ -1,4 +1,5 @@
 ﻿
+
 using IOApplication.Models.CennikModel;
 using IOApplication.Models.CennikModel.Component;
 using IOApplication.Models.CennikModel.ConcreteComponent;
@@ -31,13 +32,13 @@ namespace IOApplication.Controllers
             promocja2 = new FitnessDecorator(promocja2);
             promocja2 = new JogaDecorator(promocja2);
 
-        
+           
 
-            ListaCennikow lista = ListaCennikow.GetInstance;
+            ListaCennikow lista = new ListaCennikow();
 
             lista.DodajDoListy(promocja);
             lista.DodajDoListy(promocja2);
-         
+           
 
             return View(lista);
         }

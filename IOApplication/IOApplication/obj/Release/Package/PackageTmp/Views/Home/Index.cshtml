@@ -1,12 +1,13 @@
-﻿@model IOApplication.Models.CennikModel.TablicaCennikow
+﻿@model IOApplication.Models.CennikModel.ListaCennikow.ListaCennikow
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>Promocja</h1>
-    @foreach (var item in Model.tablicaCennikow)
+    @foreach (var item in Model.OdajListe() )
     {
+       
         <p class="lead"> @item.GetName() w cenie @item.CalculateCost() zł </p>
     }
  
