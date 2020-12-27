@@ -11,10 +11,25 @@ namespace Test_darek
     public class TestDecorator
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestCalculateCost()
         {
             //arrange
-            int kosz = 85;
+            int koszt = 85;
+           
+            //act
+            Cennik promocja = new ConcreteComponent();
+            promocja = new Days180KarnetDecorator(promocja);
+            promocja = new JogaDecorator(promocja);
+            promocja = new BoksDecorator(promocja);
+            promocja = new FitnessDecorator(promocja);
+            //assert
+            
+            Assert.AreEqual(promocja.CalculateCost(), koszt);
+        }
+        [TestMethod]
+        public void Test_Name()
+        {
+            //arrange
             string nazwa = "Karnet:180-dniowy wraz z zajęciami: Joga, Boks, Fitness,";
             //act
             Cennik promocja = new ConcreteComponent();
@@ -24,7 +39,15 @@ namespace Test_darek
             promocja = new FitnessDecorator(promocja);
             //assert
             Assert.AreEqual(promocja.GetName(), nazwa);
-            Assert.AreEqual(promocja.CalculateCost(), kosz);
         }
+        [TestMethod]
+        public void Test_Type()
+        {
+            
+
+
+        }
+
+
     }
 }
