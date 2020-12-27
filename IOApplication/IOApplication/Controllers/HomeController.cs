@@ -28,6 +28,7 @@ namespace IOApplication.Controllers
             promocja2 = new Days360KarnetDecorator(promocja2);
             promocja2 = new TaniecDecorator(promocja2);
             promocja2 = new FitnessDecorator(promocja2);
+            promocja2 = new JogaDecorator(promocja2);
 
             Cennik[] cenniki = new Cennik[2];
             cenniki[0] = promocja;
