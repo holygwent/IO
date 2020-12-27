@@ -43,8 +43,17 @@ namespace Test_darek
         [TestMethod]
         public void Test_Type()
         {
-            
-
+            //arrange
+            Cennik c = new ConcreteComponent();
+            FitnessDecorator test = new FitnessDecorator(c);
+            //act
+            Cennik promocja = new ConcreteComponent();
+            promocja = new Days180KarnetDecorator(promocja);
+            promocja = new JogaDecorator(promocja);
+            promocja = new BoksDecorator(promocja);
+            promocja = new FitnessDecorator(promocja);
+            //assert
+            Assert.IsInstanceOfType(promocja, test.GetType());//poprawne sa tego samego typu ,ale czy sa tym samym??
 
         }
 
