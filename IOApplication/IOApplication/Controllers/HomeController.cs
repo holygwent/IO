@@ -4,6 +4,7 @@ using IOApplication.Models.CennikModel.Component;
 using IOApplication.Models.CennikModel.ConcreteComponent;
 using IOApplication.Models.CennikModel.ConcreteKarnetDecorator;
 using IOApplication.Models.CennikModel.ConcreteZajeciaDecorator;
+using IOApplication.Models.CennikModel.ListaCennikow;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,15 +31,15 @@ namespace IOApplication.Controllers
             promocja2 = new FitnessDecorator(promocja2);
             promocja2 = new JogaDecorator(promocja2);
 
-            Cennik[] cenniki = new Cennik[2];
-            cenniki[0] = promocja;
-            cenniki[1] = promocja2;
-            
-            var tab = new TablicaCennikow();
+        
 
-            tab.tablicaCennikow = cenniki;
+            ListaCennikow lista = ListaCennikow.GetInstance;
 
-            return View(tab);
+            lista.DodajDoListy(promocja);
+            lista.DodajDoListy(promocja2);
+         
+
+            return View(lista);
         }
 
         private object TablicaCennikow()
