@@ -1,7 +1,4 @@
-CREATE TABLE Administrator(
-	[Login] [nvarchar](30) NOT NULL,
-	[Haslo] [nvarchar](30) NOT NULL
-);
+
 CREATE TABLE [dbo].[Klient] (
     [IdKlienta]       INT            IDENTITY (1, 1) NOT NULL,
     [Imie]            NVARCHAR (50)  NOT NULL,
