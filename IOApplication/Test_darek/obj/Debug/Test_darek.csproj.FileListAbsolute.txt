@@ -39,3 +39,11 @@ C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\obj\Debug\Test_d
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\obj\Debug\Test_darek.csproj.CopyComplete
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\obj\Debug\Test_darek.dll
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\obj\Debug\Test_darek.pdb
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\Test_darek.dll.config
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\WebGrease.dll
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\Antlr3.Runtime.dll
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\Newtonsoft.Json.dll
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\Test_darek\bin\Debug\Newtonsoft.Json.xml

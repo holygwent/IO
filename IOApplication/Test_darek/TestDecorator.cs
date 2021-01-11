@@ -52,7 +52,7 @@ namespace Test_darek
             promocja = new BoksDecorator(promocja);
             promocja = new FitnessDecorator(promocja);
             //assert
-            Assert.IsInstanceOfType(promocja, test.GetType());//poprawne sa tego samego typu ,ale czy sa tym samym??
+            Assert.IsInstanceOfType(promocja, test.GetType());//poprawne sa tego samego
 
         }
         [TestMethod]
@@ -69,6 +69,9 @@ namespace Test_darek
             promocja = new FitnessDecorator(promocja);
             //assert
             Assert.AreNotSame(promocja, test);//nie sa takie same :D
+            Assert.AreNotEqual(promocja, test);
+           
         }
+      
     }
 }
