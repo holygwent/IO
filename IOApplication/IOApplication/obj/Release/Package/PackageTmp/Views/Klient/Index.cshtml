@@ -6,9 +6,20 @@
 
 <h2>Lista Klientów</h2>
 
-<p>
+<div>
     @Html.ActionLink("Dodaj Klienta", "Create")
-</p>
+    <span style="padding-left:30px;">  @Html.ActionLink("Pokaz Wygasły Karnet", "FiltrLapsed")</span>
+</div>
+<div>
+    @using (Html.BeginForm("Index", "Klient", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść","Index")</button>
+
+    }
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -27,7 +38,7 @@
             @Html.DisplayNameFor(model => model.DataDoladowania)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Karnet)
+            @Html.DisplayNameFor(model => model.Karnet1.Dni)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DataWygasniecia)
@@ -58,7 +69,7 @@
             @Html.DisplayFor(modelItem => item.DataDoladowania)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Karnet)
+            @Html.DisplayFor(modelItem => item.Karnet1.Dni)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataWygasniecia)

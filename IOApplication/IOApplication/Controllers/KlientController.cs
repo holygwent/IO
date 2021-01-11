@@ -12,15 +12,70 @@ namespace IOApplication.Controllers
 {
     public class KlientController : Controller
     {
-        private SiłowniaEntities db = new SiłowniaEntities();
+        private SiłowniaEntities2 db = new SiłowniaEntities2();
 
         // GET: Klient
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
-            var klient = db.Klient.Include(k => k.Zajecia);
-            return View(klient.ToList());
-        }
+         //   var klient = db.Klient.Include(k => k.Zajecia);
+            var collection = from k in db.Klient.Include(k => k.Zajecia).Include(k=>k.Karnet1)
+                             orderby k.Nazwisko ascending,k.Imie ascending
+                             where k!= null
+                             select k
+                             ;
+            if (!string.IsNullOrEmpty(searching))
+            {
 
+                if (searching.Contains(' '))
+                {
+                    string[] tab = new string[2];
+                    string firstName, lastName;
+                    tab = searching.Split(' ');
+                    if (tab[1] == null)
+                    {
+                        tab[1] = " ";
+                    }
+                    else if (tab[0] == null)
+                    {
+                        tab[0] = " ";
+                    }
+                    firstName = tab[0];
+                    lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
+
+                    collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
+                                 orderby k.Nazwisko ascending, k.Imie ascending
+                                 where k.Nazwisko == lastName && k.Imie == firstName
+                                 select k;
+                    if (collection.ToList().Count == 0)
+                    {
+                        firstName = tab[1];
+                        lastName = tab[0];
+                        collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
+                                     orderby k.Nazwisko ascending, k.Imie ascending
+                                     where k.Nazwisko == lastName && k.Imie == firstName
+                                     select k;
+                    }
+                }
+                else
+                {
+                    collection = db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1).Where(x => x.Imie == searching);
+                      if(collection.ToList().Count==0)
+                    collection = db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1).Where(x => x.Nazwisko== searching);
+                }
+            }
+            return View(collection.ToList());
+        }
+        // GET: Klient
+        public ActionResult FiltrLapsed()
+        {
+            //   var klient = db.Klient.Include(k => k.Zajecia);
+            var collection = from k in db.Klient.Include(k => k.Zajecia).Include(k => k.Karnet1)
+                             orderby k.Nazwisko ascending, k.Imie ascending
+                             where k.DataWygasniecia < DateTime.Now
+                             select k
+                             ;
+            return View(collection.ToList());
+        }
         // GET: Klient/Details/5
         public ActionResult Details(int? id)
         {
@@ -40,6 +95,7 @@ namespace IOApplication.Controllers
         public ActionResult Create()
         {
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa");
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni");
             return View();
         }
 
@@ -50,14 +106,25 @@ namespace IOApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdKlienta,Imie,Nazwisko,Adres,Miasto,KodPocztowy,Kraj,Telefon,Email,DataDoladowania,Karnet,DataWygasniecia,IdZajecia,Login,Haslo")] Klient klient)
         {
+          
             if (ModelState.IsValid)
             {
                 db.Klient.Add(klient);
+
+                klient.DataDoladowania = DateTime.Now;
+                var Listdays = from k in db.Karnet
+                                 where k.Id == klient.Karnet
+                                 select (double)k.Dni;
+                
+                
+                klient.DataWygasniecia = klient.DataDoladowania.AddDays(Listdays.First());
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa", klient.IdZajecia);
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni", klient.Karnet);//tu
             return View(klient);
         }
 
@@ -74,6 +141,8 @@ namespace IOApplication.Controllers
                 return HttpNotFound();
             }
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa", klient.IdZajecia);
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni", klient.Karnet);
+          
             return View(klient);
         }
 
@@ -87,10 +156,18 @@ namespace IOApplication.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(klient).State = EntityState.Modified;
+                var Listdays = from k in db.Karnet
+                               where k.Id == klient.Karnet
+                               select (double)k.Dni;
+
+
+                klient.DataWygasniecia = klient.DataDoladowania.AddDays(Listdays.First());
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.IdZajecia = new SelectList(db.Zajecia, "IdZajecia", "Nazwa", klient.IdZajecia);
+            ViewBag.Karnet = new SelectList(db.Karnet, "Id", "Dni", klient.Karnet);
             return View(klient);
         }
 

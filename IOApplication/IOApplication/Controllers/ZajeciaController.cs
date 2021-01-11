@@ -12,12 +12,18 @@ namespace IOApplication.Controllers
 {
     public class ZajeciaController : Controller
     {
-        private SiłowniaEntities db = new SiłowniaEntities();
+        private SiłowniaEntities2 db = new SiłowniaEntities2();
 
         // GET: Zajecia
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
-            return View(db.Zajecia.ToList());
+            var collection = db.Zajecia.OrderBy(z => z.Nazwa);
+            if (!string.IsNullOrEmpty(searching))
+            {
+                collection = db.Zajecia.Where(z => z.Nazwa == searching).OrderBy(z => z.Nazwa);
+            }
+
+                return View(collection.ToList());
         }
 
         // GET: Zajecia/Details/5
