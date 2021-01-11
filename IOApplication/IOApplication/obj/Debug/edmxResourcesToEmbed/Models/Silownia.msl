@@ -81,5 +81,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Karnet">
+      <EntityTypeMapping TypeName="SiłowniaModel.Karnet">
+        <MappingFragment StoreEntitySet="Karnet">
+          <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

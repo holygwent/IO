@@ -30,6 +30,7 @@ namespace IOApplication.Models
         public string Login { get; set; }
         public string Haslo { get; set; }
     
+        public virtual Karnet Karnet1 { get; set; }
         public virtual Zajecia Zajecia { get; set; }
     }
 }

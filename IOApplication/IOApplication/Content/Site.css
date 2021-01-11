@@ -61,7 +61,7 @@ h1, h3 {
     font-weight: bold;
 }
 
-.p-0{
+.p-0 {
     padding: 0;
 }
 
@@ -160,11 +160,11 @@ hr {
     border-color: #f34e3a;
 }
 
-.btn-primary:hover {
-    color: #fafafa;
-    background-color: #f34e3a;
-    border-color: #f34e3a;
-}
+    .btn-primary:hover {
+        color: #fafafa;
+        background-color: #f34e3a;
+        border-color: #f34e3a;
+    }
 
 button:hover {
     cursor: pointer
@@ -179,35 +179,35 @@ button {
     outline: none;
 }
 
-button:hover:before {
-    opacity: 1;
-    transform: translate(0,0);
-}
+    button:hover:before {
+        opacity: 1;
+        transform: translate(0,0);
+    }
 
-button:before {
-    content: attr(data-hover);
-    position: absolute;
-    left: 0;
-    width: 100%;
-    font-weight: bold;
-    font-size: 16px;
-    opacity: 0;
-    transform: translate(-100%,0);
-    transition: all .3s ease-in-out;
-    color: #fafafa;
-}
+    button:before {
+        content: attr(data-hover);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        font-weight: bold;
+        font-size: 16px;
+        opacity: 0;
+        transform: translate(-100%,0);
+        transition: all .3s ease-in-out;
+        color: #fafafa;
+    }
 
-button:hover div {
-    opacity: 0;
-    transform: translate(100%,0)
-}
+    button:hover div {
+        opacity: 0;
+        transform: translate(100%,0)
+    }
 
-button div {
-    font-weight: bold;
-    font-size: 16px;
-    transition: all .3s ease-in-out;
-    color: #fafafa;
-}
+    button div {
+        font-weight: bold;
+        font-size: 16px;
+        transition: all .3s ease-in-out;
+        color: #fafafa;
+    }
 
 footer {
     margin: 20px;
@@ -236,7 +236,6 @@ input[type=text], select, textarea {
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 6px;
-    
 }
 
 header.masthead h1 {
@@ -283,27 +282,39 @@ header.masthead {
     font-weight: bold !important;
 }
 
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus {
-    color: #f34e3a !important;
-    background-color: transparent;
-}
+    .navbar-inverse .navbar-brand:hover,
+    .navbar-inverse .navbar-brand:focus {
+        color: #f34e3a !important;
+        background-color: transparent;
+    }
 
 .navbar-inverse .navbar-nav > li > a {
     color: #afafaf !important;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
-    color: #f34e3a !important;
-    background-color: transparent;
-}
+    .navbar-inverse .navbar-nav > li > a:hover,
+    .navbar-inverse .navbar-nav > li > a:focus {
+        color: #f34e3a !important;
+        background-color: transparent;
+    }
 
-img {
+img.fzimg {
     width: 100%;
     max-height: 575px;
     min-height: 575px;
     object-fit: cover;
+}
+
+.full-page {
+    height: 100vh;
+}
+
+img.roundimg {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #f34e3a;
+    max-height: 150px;
+    max-width: 150px;
 }
 
 .flex {

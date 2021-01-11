@@ -28,6 +28,7 @@
     <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Haslo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Zajecia" Relationship="Self.FK_Klient_ToZajecia" FromRole="Klient" ToRole="Zajecia" />
+    <NavigationProperty Name="Karnet1" Relationship="SiłowniaModel.FK_Klient_ToKarnet" FromRole="Klient" ToRole="Karnet" />
   </EntityType>
   <EntityType Name="Pracownicy">
     <Key>
@@ -117,5 +118,31 @@
       <End Role="Zajecia" EntitySet="Zajecia" />
       <End Role="Trener" EntitySet="Trener" />
     </AssociationSet>
+    <EntitySet Name="Karnet" EntityType="SiłowniaModel.Karnet" />
+    <AssociationSet Name="FK_Klient_ToKarnet" Association="SiłowniaModel.FK_Klient_ToKarnet">
+      <End Role="Karnet" EntitySet="Karnet" />
+      <End Role="Klient" EntitySet="Klient" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Karnet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Dni" Type="Int32" Nullable="false" />
+    <Property Name="Koszt" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klient" Relationship="SiłowniaModel.FK_Klient_ToKarnet" FromRole="Karnet" ToRole="Klient" />
+  </EntityType>
+  <Association Name="FK_Klient_ToKarnet">
+    <End Type="SiłowniaModel.Karnet" Role="Karnet" Multiplicity="1" />
+    <End Type="SiłowniaModel.Klient" Role="Klient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Karnet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Klient">
+        <PropertyRef Name="Karnet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<IOApplication.Models.Klient>
+
+@{
+    ViewBag.Title = "FiltrLapsed";
+}
+
+<h2>Lista Klientów</h2>
+
+<p>
+
+    @Html.ActionLink("Dodaj Klienta", "Create")
+    <span style="padding-left:30px; ">  @Html.ActionLink("Cofnij filtrowanie", "Index")  </span>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Imie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataDoladowania)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Karnet1.Dni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataWygasniecia)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwisko)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDoladowania)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Karnet1.Dni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataWygasniecia)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Zajecia.Nazwa)
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.IdKlienta }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.IdKlienta }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.IdKlienta })
+            </td>
+        </tr>
+    }
+
+</table>

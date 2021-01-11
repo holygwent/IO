@@ -4,11 +4,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista Klientów</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div>
+    @Html.ActionLink("Dodaj Klienta", "Create")
+    <span style="padding-left:30px;">  @Html.ActionLink("Pokaz Wygasły Karnet", "FiltrLapsed")</span>
+</div>
+<div>
+    @using (Html.BeginForm("Index", "Klient", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść","Index")</button>
+
+    }
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -16,18 +27,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nazwisko)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Adres)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Miasto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KodPocztowy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kraj)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Telefon)
@@ -39,17 +38,12 @@
             @Html.DisplayNameFor(model => model.DataDoladowania)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Karnet)
+            @Html.DisplayNameFor(model => model.Karnet1.Dni)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DataWygasniecia)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Haslo)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
         </th>
@@ -64,18 +58,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Nazwisko)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Adres)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Miasto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KodPocztowy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kraj)
-        </td>
+      
         <td>
             @Html.DisplayFor(modelItem => item.Telefon)
         </td>
@@ -86,24 +69,19 @@
             @Html.DisplayFor(modelItem => item.DataDoladowania)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Karnet)
+            @Html.DisplayFor(modelItem => item.Karnet1.Dni)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataWygasniecia)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Haslo)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Zajecia.Nazwa)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdKlienta }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdKlienta }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdKlienta })
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.IdKlienta }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.IdKlienta }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.IdKlienta })
         </td>
     </tr>
 }
