@@ -13,10 +13,10 @@ namespace IOApplication.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SiłowniaEntities : DbContext
+    public partial class SiłowniaEntities2 : DbContext
     {
-        public SiłowniaEntities()
-            : base("name=SiłowniaEntities")
+        public SiłowniaEntities2()
+            : base("name=SiłowniaEntities2")
         {
         }
     
@@ -25,11 +25,10 @@ namespace IOApplication.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Administrator> Administrator { get; set; }
+        public virtual DbSet<Karnet> Karnet { get; set; }
         public virtual DbSet<Klient> Klient { get; set; }
         public virtual DbSet<Pracownicy> Pracownicy { get; set; }
         public virtual DbSet<Trener> Trener { get; set; }
         public virtual DbSet<Zajecia> Zajecia { get; set; }
-        public virtual DbSet<Karnet> Karnet { get; set; }
     }
 }

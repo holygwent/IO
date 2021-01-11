@@ -10,113 +10,107 @@ using IOApplication.Models;
 
 namespace IOApplication.Controllers
 {
-    public class ZajeciaController : Controller
+    public class KarnetController : Controller
     {
         private SiłowniaEntities2 db = new SiłowniaEntities2();
 
-        // GET: Zajecia
-        public ActionResult Index(string searching)
+        // GET: Karnet
+        public ActionResult Index()
         {
-            var collection = db.Zajecia.OrderBy(z => z.Nazwa);
-            if (!string.IsNullOrEmpty(searching))
-            {
-                collection = db.Zajecia.Where(z => z.Nazwa == searching).OrderBy(z => z.Nazwa);
-            }
-
-                return View(collection.ToList());
+            return View(db.Karnet.ToList());
         }
 
-        // GET: Zajecia/Details/5
+        // GET: Karnet/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zajecia zajecia = db.Zajecia.Find(id);
-            if (zajecia == null)
+            Karnet karnet = db.Karnet.Find(id);
+            if (karnet == null)
             {
                 return HttpNotFound();
             }
-            return View(zajecia);
+            return View(karnet);
         }
 
-        // GET: Zajecia/Create
+        // GET: Karnet/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Zajecia/Create
+        // POST: Karnet/Create
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdZajecia,Nazwa,Godzina")] Zajecia zajecia)
+        public ActionResult Create([Bind(Include = "Id,Dni,Koszt")] Karnet karnet)
         {
             if (ModelState.IsValid)
             {
-                db.Zajecia.Add(zajecia);
+                db.Karnet.Add(karnet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(zajecia);
+            return View(karnet);
         }
 
-        // GET: Zajecia/Edit/5
+        // GET: Karnet/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zajecia zajecia = db.Zajecia.Find(id);
-            if (zajecia == null)
+            Karnet karnet = db.Karnet.Find(id);
+            if (karnet == null)
             {
                 return HttpNotFound();
             }
-            return View(zajecia);
+            return View(karnet);
         }
 
-        // POST: Zajecia/Edit/5
+        // POST: Karnet/Edit/5
         // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdZajecia,Nazwa,Godzina")] Zajecia zajecia)
+        public ActionResult Edit([Bind(Include = "Id,Dni,Koszt")] Karnet karnet)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(zajecia).State = EntityState.Modified;
+                db.Entry(karnet).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(zajecia);
+            return View(karnet);
         }
 
-        // GET: Zajecia/Delete/5
+        // GET: Karnet/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zajecia zajecia = db.Zajecia.Find(id);
-            if (zajecia == null)
+            Karnet karnet = db.Karnet.Find(id);
+            if (karnet == null)
             {
                 return HttpNotFound();
             }
-            return View(zajecia);
+            return View(karnet);
         }
 
-        // POST: Zajecia/Delete/5
+        // POST: Karnet/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Zajecia zajecia = db.Zajecia.Find(id);
-            db.Zajecia.Remove(zajecia);
+            Karnet karnet = db.Karnet.Find(id);
+            db.Karnet.Remove(karnet);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -6,6 +6,7 @@ using System.Web;
 
 namespace IOApplication.Models.CennikModel.Decorator
 {
+    //sprawdz namespace
     public class CennikDecorator :Cennik
     {
         protected Cennik _cennik;

@@ -5,6 +5,7 @@ using System.Web;
 
 namespace IOApplication.Models.CennikModel.Component
 {
+    //sprawdz namespace
     public abstract class Cennik
     {
 

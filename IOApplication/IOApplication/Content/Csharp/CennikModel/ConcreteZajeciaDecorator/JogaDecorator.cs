@@ -5,21 +5,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace IOApplication.Models.CennikModel.ConcreteKarnetDecorator
+namespace IOApplication.Models.CennikModel.ConcreteZajeciaDecorator
 {
-    public class Days60KarnetDecorator: CennikDecorator
+    //sprawdz namespace
+    public class JogaDecorator:CennikDecorator
     {
-        public Days60KarnetDecorator(Cennik cennik) : base(cennik)
+        public JogaDecorator(Cennik cennik) : base(cennik)
         {
 
         }
         public override double CalculateCost()
         {
-            return base.CalculateCost() + 25;
+            return base.CalculateCost() + 5;
         }
         public override string GetName()
         {
-            return base.GetName() + "60-dniowy wraz z zajęciami:";
+            return base.GetName() + " Joga,";
         }
+
     }
 }

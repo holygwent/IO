@@ -12,7 +12,7 @@ namespace IOApplication.Controllers
 {
     public class TrenerController : Controller
     {
-        private SiłowniaEntities db = new SiłowniaEntities();
+        private SiłowniaEntities2 db = new SiłowniaEntities2();
 
         // GET: Trener
         public ActionResult Index(string searching)

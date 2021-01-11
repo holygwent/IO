@@ -5,21 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace IOApplication.Models.CennikModel.ConcreteKarnetDecorator
+namespace IOApplication.Models.CennikModel.ConcreteZajeciaDecorator
 {
-    public class Days180KarnetDecorator: CennikDecorator
+    //sprawdz namespace
+    public class FitnessDecorator: CennikDecorator
     {
-        public Days180KarnetDecorator(Cennik cennik) : base(cennik)
+        public FitnessDecorator(Cennik cennik) : base(cennik)
         {
 
         }
         public override double CalculateCost()
         {
-            return base.CalculateCost() + 70;
+            return base.CalculateCost() + 5;
         }
         public override string GetName()
         {
-            return base.GetName() + "180-dniowy wraz z zajęciami:";
+            return base.GetName() + " Fitness,";
         }
     }
 }

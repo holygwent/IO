@@ -7,6 +7,7 @@ using System.Web;
 
 namespace IOApplication.Models.CennikModel.ListaCennikow
 {
+    //sprawdz namespace
 
     public class ListaCennikow
     {

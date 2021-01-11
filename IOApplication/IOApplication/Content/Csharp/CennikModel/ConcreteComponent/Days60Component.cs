@@ -1,21 +1,21 @@
-﻿using IOApplication.Models.CennikModel.Component;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using IOApplication.Models.CennikModel.Component;
 
 namespace IOApplication.Models.CennikModel.ConcreteComponent
 {
-    public class ConcreteComponent:Cennik
+    public class Days60Component : Cennik
     {
         public override double CalculateCost()
         {
-            return 0;
+            return 25;
         }
 
         public override string GetName()
         {
-            return "Karnet:";
+            return "Karnet:60-dniowy wraz z zajęciami:";
         }
     }
 }

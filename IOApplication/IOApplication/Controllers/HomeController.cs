@@ -3,7 +3,7 @@
 using IOApplication.Models.CennikModel;
 using IOApplication.Models.CennikModel.Component;
 using IOApplication.Models.CennikModel.ConcreteComponent;
-using IOApplication.Models.CennikModel.ConcreteKarnetDecorator;
+
 using IOApplication.Models.CennikModel.ConcreteZajeciaDecorator;
 using IOApplication.Models.CennikModel.ListaCennikow;
 using System;
@@ -19,15 +19,15 @@ namespace IOApplication.Controllers
     {
         public ActionResult Index()
         {
-          
-            Cennik promocja = new ConcreteComponent();
-            promocja = new Days180KarnetDecorator(promocja);
+
+            Cennik promocja = new Days60Component();
+           
             promocja = new JogaDecorator(promocja);
             promocja = new BoksDecorator(promocja);
             promocja = new FitnessDecorator(promocja);
 
-            Cennik promocja2 = new ConcreteComponent();
-            promocja2 = new Days360KarnetDecorator(promocja2);
+            Cennik promocja2 = new Days180Component();
+          
             promocja2 = new TaniecDecorator(promocja2);
             promocja2 = new FitnessDecorator(promocja2);
             promocja2 = new JogaDecorator(promocja2);

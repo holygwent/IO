@@ -7,9 +7,10 @@ using System.Web;
 
 namespace IOApplication.Models.CennikModel.ConcreteZajeciaDecorator
 {
-    public class TaniecDecorator:CennikDecorator
+    //sprawdz namespace
+    public class BoksDecorator: CennikDecorator
     {
-        public TaniecDecorator(Cennik cennik) : base(cennik)
+        public BoksDecorator(Cennik cennik) : base(cennik)
         {
 
         }
@@ -19,7 +20,7 @@ namespace IOApplication.Models.CennikModel.ConcreteZajeciaDecorator
         }
         public override string GetName()
         {
-            return base.GetName() + " Taniec,";
+            return base.GetName() + " Boks,";
         }
     }
 }
