@@ -17,4 +17,23 @@ namespace IOApplication.Content.Csharp.Fabryka
         string Nazwisko { get; set; }
         string StazPracy();
     }
+    public class TrenerMiesiaca : ITrener
+    {
+
+
+
+        public string Imie { get; set; }
+
+
+        public string Nazwisko { get; set; }
+        public DateTime DataZatrudnienia { get; set; }
+
+
+        public string StazPracy()
+        {
+            DateTime date2 = DateTime.Now;
+            TimeSpan staz = date2 - DataZatrudnienia;
+            return $"Członek naszego zespołu już z nami {staz.Days} dni!!!";
+        }
+    }
 }
