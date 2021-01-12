@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IOApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,7 +37,28 @@ namespace IOApplication.Content.Csharp.Fabryka
             return $"Członek naszego zespołu już z nami {staz.Days} dni!!!";
         }
     }
+    public class PracownikFactory
+    {
+        private SiłowniaEntities2 db = new SiłowniaEntities2();
 
+        public ITrener CreatePracownik(TrenerPoID pracownikID)
+        {
+            switch (pracownikID)
+            {
+                case TrenerPoID.Antek_Bury:
+                    return DajPracownikMiesiaca((int)TrenerPoID.Antek_Bury);
+
+                case TrenerPoID.Andrzej_Kwitek:
+                    return DajPracownikMiesiaca((int)TrenerPoID.Andrzej_Kwitek);
+
+                default:
+                    throw new ArgumentException();
+            }
+        }
+
+       
+
+    }
 
 
 
