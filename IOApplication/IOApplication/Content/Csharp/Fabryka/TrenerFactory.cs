@@ -56,7 +56,21 @@ namespace IOApplication.Content.Csharp.Fabryka
             }
         }
 
-       
+
+        private ITrener DajPracownikMiesiaca(int id)
+        {
+            TrenerMiesiaca trenerMiesiaca = new TrenerMiesiaca();
+            var collection = db.Trener.Where(x => x.IdTrener == id);
+            foreach (var item in collection)
+            {
+
+                trenerMiesiaca.Imie = item.Imie;
+                trenerMiesiaca.Nazwisko = item.Nazwisko;
+                trenerMiesiaca.DataZatrudnienia = item.DataZatrudnienia;
+            }
+            return trenerMiesiaca;
+        }
+
 
     }
 
