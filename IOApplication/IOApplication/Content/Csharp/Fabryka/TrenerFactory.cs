@@ -17,7 +17,7 @@ namespace IOApplication.Content.Csharp.Fabryka
         string Nazwisko { get; set; }
         string StazPracy();
     }
-    public class TrenerMiesiaca : ITrener
+    public class TrenerMiesiaca : ITrener //produkt
     {
 
 
@@ -36,4 +36,10 @@ namespace IOApplication.Content.Csharp.Fabryka
             return $"Członek naszego zespołu już z nami {staz.Days} dni!!!";
         }
     }
+
+
+
+
+
+
 }
