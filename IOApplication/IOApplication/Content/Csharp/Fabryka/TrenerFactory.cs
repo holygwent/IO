@@ -37,13 +37,13 @@ namespace IOApplication.Content.Csharp.Fabryka
             return $"Członek naszego zespołu już z nami {staz.Days} dni!!!";
         }
     }
-    public class PracownikFactory
+    public class TrenerFactory
     {
         private SiłowniaEntities2 db = new SiłowniaEntities2();
 
-        public ITrener CreatePracownik(TrenerPoID pracownikID)
+        public ITrener CreatePracownik(TrenerPoID TrenerID)
         {
-            switch (pracownikID)
+            switch (TrenerID)
             {
                 case TrenerPoID.Antek_Bury:
                     return DajPracownikMiesiaca((int)TrenerPoID.Antek_Bury);
