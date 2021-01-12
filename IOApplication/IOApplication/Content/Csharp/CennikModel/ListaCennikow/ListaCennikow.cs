@@ -1,4 +1,5 @@
 ﻿
+using IOApplication.Content.Csharp.Fabryka;
 using IOApplication.Models.CennikModel.Component;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,15 @@ namespace IOApplication.Models.CennikModel.ListaCennikow
     {
     
         private List<Cennik> listaCennikow = new List<Cennik>();
-     
-     
-     
+
+        public ITrener trenerMiesiaca;
+
+        public void DodajTreneraMiesiaca(ITrener trener)
+        {
+            trenerMiesiaca = trener;
+        }
+
+
         public void DodajDoListy(Cennik c)
         {
             listaCennikow.Add(c);
