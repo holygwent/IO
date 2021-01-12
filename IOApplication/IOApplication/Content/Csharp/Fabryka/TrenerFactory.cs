@@ -10,4 +10,11 @@ namespace IOApplication.Content.Csharp.Fabryka
         Antek_Bury = 1,
         Andrzej_Kwitek
     }
+    public interface ITrener
+    {
+
+        string Imie { get; set; }
+        string Nazwisko { get; set; }
+        string StazPracy();
+    }
 }
