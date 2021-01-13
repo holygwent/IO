@@ -132,6 +132,7 @@
     <Compile Include="Content\Csharp\CennikModel\ConcreteComponent\Days30Component.cs" />
     <Compile Include="Content\Csharp\CennikModel\ConcreteComponent\Days360Component.cs" />
     <Compile Include="Content\Csharp\CennikModel\ConcreteComponent\Days60Component.cs" />
+    <Compile Include="Content\Csharp\Fabryka\TrenerFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KarnetController.cs" />
     <Compile Include="Controllers\KlientController.cs" />
@@ -185,7 +186,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\profilowa.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

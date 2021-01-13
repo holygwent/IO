@@ -1,5 +1,6 @@
 ﻿
 
+using IOApplication.Content.Csharp.Fabryka;
 using IOApplication.Models.CennikModel;
 using IOApplication.Models.CennikModel.Component;
 using IOApplication.Models.CennikModel.ConcreteComponent;
@@ -32,10 +33,12 @@ namespace IOApplication.Controllers
             promocja2 = new FitnessDecorator(promocja2);
             promocja2 = new JogaDecorator(promocja2);
 
-           
+            TrenerFactory fabryka = new TrenerFactory();
+            var TrenerMiesiaca = fabryka.CreatePracownik(TrenerPoID.Andrzej_Kwitek);
 
             ListaCennikow lista = new ListaCennikow();
 
+            lista.DodajTreneraMiesiaca(TrenerMiesiaca);
             lista.DodajDoListy(promocja);
             lista.DodajDoListy(promocja2);
            
