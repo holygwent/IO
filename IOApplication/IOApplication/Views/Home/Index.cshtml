@@ -201,17 +201,38 @@
 <section class="bg-primary" id="promocje">
     <div class="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10 text-center">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
-                        <h1 class="text-white">PROMOCJE</h1>
-                        <hr class="divider mt-2 mb-2" />
-                        @foreach (var item in Model.OdajListe())
-                        {
-                            <h4 class="text-grey"> @item.GetName() tylko teraz za @item.CalculateCost() zł </h4>
-                        }
-                        <button class="mt-2" data-hover="SKORZYSTAJ Z PROMOCJI"><div>DOWIEDZ SIE WIECEJ</div></button>
-                    </div>
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 text-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+                    <h1 class="text-white">DOSTĘPNE PROMOCJE</h1>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                    <button class="mt-2" data-hover="ZOBACZ PROMOCJE"><div>DOWIEDZ SIĘ WIĘCEJ</div></button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-5 mb-10 text-center">
+                <div class="row justify-content-center align-items-center">
+                    @foreach (var item in Model.OdajListe())
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6 text-center">
+                            <div class="p-3 bg-tertiary mb-1">
+                                <h1 class="text-white">
+                                    @item.CalculateCost()
+                                    <sup> PLN</sup>
+                                </h1>
+                                <hr class="divider mt-2 mb-2" />
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                        <p class="text-grey mb-2">
+                                            @item.GetName()
+                                        </p>
+                                        <button data-hover="KUP KARNET"><div>KUP KARNET</div></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
