@@ -3,79 +3,86 @@
 @{
     ViewBag.Title = "FiltrLapsed";
 }
+@Styles.Render("~/Content/podstrona.css")
 
-<h2>Lista Klientów</h2>
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
 
-<p>
+            <h2>Lista Klientów</h2>
 
-    @Html.ActionLink("Dodaj Klienta", "Create")
-    <span style="padding-left:30px; ">  @Html.ActionLink("Cofnij filtrowanie", "Index")  </span>
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Imie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nazwisko)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefon)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataDoladowania)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Karnet1.Dni)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataWygasniecia)
-        </th>
+            <p>
 
-        <th>
-            @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
-        </th>
-        <th></th>
-    </tr>
+                @Html.ActionLink("Dodaj Klienta", "Create")
+                <span style="padding-left:30px; ">  @Html.ActionLink("Cofnij filtrowanie", "Index")  </span>
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Imie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nazwisko)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataDoladowania)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Karnet1.Dni)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataWygasniecia)
+                    </th>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nazwisko)
-            </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
+                    </th>
+                    <th></th>
+                </tr>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDoladowania)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Karnet1.Dni)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataWygasniecia)
-            </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Imie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwisko)
+                        </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Zajecia.Nazwa)
-            </td>
-            <td>
-                @Html.ActionLink("Edytuj", "Edit", new { id = item.IdKlienta }) |
-                @Html.ActionLink("Szczegóły", "Details", new { id = item.IdKlienta }) |
-                @Html.ActionLink("Usuń", "Delete", new { id = item.IdKlienta })
-            </td>
-        </tr>
-    }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefon)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataDoladowania)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Karnet1.Dni)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataWygasniecia)
+                        </td>
 
-</table>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Zajecia.Nazwa)
+                        </td>
+                        <td>
+                            <button>@Html.ActionLink("Edytuj", "Edit", new { id = item.IdKlienta })</button>
+                            <button>@Html.ActionLink("Szczegóły", "Details", new { id = item.IdKlienta })</button>
+                            <button>@Html.ActionLink("Usuń", "Delete", new { id = item.IdKlienta })</button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
