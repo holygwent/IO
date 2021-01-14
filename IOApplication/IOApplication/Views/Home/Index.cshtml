@@ -73,6 +73,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <section class="bg-secondary" id="trener">
@@ -97,7 +98,30 @@
     </div>
 </section>
 
-<section class="bg-primary" id="karnet">
+<section class="bg-primary" id="trenermiesiaca">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 mt-10 mb-10 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 text-right">
+                        <img class="roundimg" src="~/Content/trenermiesiaca.jpg" />
+                    </div>
+                    <div class="col-lg-6 text-left">
+                        <h2 class="text-white">TRENER MIESIĄCA</h2>
+                        <h4 class="text-custom">
+                            @Model.trenerMiesiaca.Imie @Model.trenerMiesiaca.Nazwisko
+                        </h4>
+                        <p class="text-grey mb-0 text-left">
+                            @Model.trenerMiesiaca.StazPracy()
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-secondary" id="karnet">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 text-center">
@@ -173,7 +197,7 @@
     </div>
 </section>
 
-<section class="page-section bg-secondary" id="footer">
+<section class="page-section bg-primary" id="footer">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 text-center mt-10 mb-10">
