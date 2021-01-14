@@ -2,6 +2,7 @@
     ViewBag.Title = "GET FIT";
 }
 @Styles.Render("~/Content/profilowa.css")
+@model IOApplication.Models.CennikModel.ListaCennikow.ListaCennikow
 
 <header class="masthead flex">
     <div class="container">
@@ -197,7 +198,27 @@
     </div>
 </section>
 
-<section class="page-section bg-primary" id="footer">
+<section class="bg-primary" id="promocje">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                        <h1 class="text-white">PROMOCJE</h1>
+                        <hr class="divider mt-2 mb-2" />
+                        @foreach (var item in Model.OdajListe())
+                        {
+                            <h4 class="text-grey"> @item.GetName() tylko teraz za @item.CalculateCost() zł </h4>
+                        }
+                        <button class="mt-2" data-hover="SKORZYSTAJ Z PROMOCJI"><div>DOWIEDZ SIE WIECEJ</div></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section bg-secondary" id="info">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 text-center mt-10 mb-10">
