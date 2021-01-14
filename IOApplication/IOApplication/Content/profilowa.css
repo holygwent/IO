@@ -1,24 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: auto;
-    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
+﻿input,
 select,
 textarea {
     max-width: 480px;
@@ -37,24 +17,6 @@ textarea {
 
 .bg-tertiary {
     background-color: #29282d;
-}
-
-.container {
-    width: auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.justify-content-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.justify-content-right {
-    justify-content: right !important;
 }
 
 h1, h3 {
@@ -160,11 +122,11 @@ hr {
     border-color: #f34e3a;
 }
 
-    .btn-primary:hover {
-        color: #fafafa;
-        background-color: #f34e3a;
-        border-color: #f34e3a;
-    }
+.btn-primary:hover {
+    color: #fafafa;
+    background-color: #f34e3a;
+    border-color: #f34e3a;
+}
 
 button:hover {
     cursor: pointer
@@ -179,38 +141,34 @@ button {
     outline: none;
 }
 
-    button:hover:before {
-        opacity: 1;
-        transform: translate(0,0);
-    }
+button:hover:before {
+    opacity: 1;
+    transform: translate(0,0);
+}
 
-    button:before {
-        content: attr(data-hover);
-        position: absolute;
-        left: 0;
-        width: 100%;
-        font-weight: bold;
-        font-size: 16px;
-        opacity: 0;
-        transform: translate(-100%,0);
-        transition: all .3s ease-in-out;
-        color: #fafafa;
-    }
+button:before {
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    opacity: 0;
+    transform: translate(-100%,0);
+    transition: all .3s ease-in-out;
+    color: #fafafa;
+}
 
-    button:hover div {
-        opacity: 0;
-        transform: translate(100%,0)
-    }
+button:hover div {
+    opacity: 0;
+    transform: translate(100%,0)
+}
 
-    button div {
-        font-weight: bold;
-        font-size: 16px;
-        transition: all .3s ease-in-out;
-        color: #fafafa;
-    }
-
-footer {
-    margin: 20px;
+button div {
+    font-weight: bold;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+    color: #fafafa;
 }
 
 hr.divider {
@@ -277,36 +235,11 @@ header.masthead {
     height: 100vh;
 }
 
-.navbar-inverse .navbar-brand {
-    color: #f34e3a !important;
-    font-weight: bold !important;
-}
-
-    .navbar-inverse .navbar-brand:hover,
-    .navbar-inverse .navbar-brand:focus {
-        color: #f34e3a !important;
-        background-color: transparent;
-    }
-
-.navbar-inverse .navbar-nav > li > a {
-    color: #afafaf !important;
-}
-
-    .navbar-inverse .navbar-nav > li > a:hover,
-    .navbar-inverse .navbar-nav > li > a:focus {
-        color: #f34e3a !important;
-        background-color: transparent;
-    }
-
 img.fzimg {
     width: 100%;
     max-height: 575px;
     min-height: 575px;
     object-fit: cover;
-}
-
-.full-page {
-    height: 100vh;
 }
 
 img.roundimg {
@@ -322,4 +255,12 @@ img.roundimg {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+footer {
+    margin: 20px;
+}
+
+.full-page {
+    height: 100vh;
 }
