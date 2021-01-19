@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Mateusz\Desktop\IO\IOApplication\IOApplication\Models\Silownia2.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\48502\source\repos\IO_cala_appka_main\IOApplication\IOApplication\Models\Silownia2.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

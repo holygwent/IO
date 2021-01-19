@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Dni" Type="Int32" Nullable="false" />
     <Property Name="Koszt" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Klient" Relationship="Self.FK_Klient_ToKarnet" FromRole="Karnet" ToRole="Klient" />

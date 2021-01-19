@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Dni" Type="int" Nullable="false" />
           <Property Name="Koszt" Type="int" Nullable="false" />
         </EntityType>
@@ -144,7 +144,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Dni" Type="Int32" Nullable="false" />
           <Property Name="Koszt" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Klient" Relationship="Self.FK_Klient_ToKarnet" FromRole="Karnet" ToRole="Klient" />
