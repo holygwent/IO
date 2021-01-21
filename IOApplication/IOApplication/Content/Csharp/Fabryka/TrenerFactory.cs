@@ -34,6 +34,10 @@ namespace IOApplication.Content.Csharp.Fabryka
         {
             DateTime date2 = DateTime.Now;
             TimeSpan staz = date2 - DataZatrudnienia;
+            if(staz.Days<0)
+            {
+                throw new Exception("data zatrudnienia trenera jest przyszla");
+            }
             return $"Członek naszego zespołu już z nami {staz.Days} dni!!!";
         }
     }

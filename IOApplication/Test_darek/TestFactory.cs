@@ -28,7 +28,7 @@ namespace Test_darek
         }
         [TestMethod]
 
-        public void Sprawdzanie_poprawnosci_metody_StazPracy()
+        public void Sprawdzanie_poprawnosci_danych_trenera_z_fabryki_v2()
         {
             //Arange
             DateTime zatrudnienie = new DateTime(2019, 06, 03);
