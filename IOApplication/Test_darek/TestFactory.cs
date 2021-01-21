@@ -26,7 +26,26 @@ namespace Test_darek
 
 
         }
-       
-        
+        [TestMethod]
+
+        public void Sprawdzanie_poprawnosci_metody_StazPracy()
+        {
+            //Arange
+            DateTime zatrudnienie = new DateTime(2019, 06, 03);
+            DateTime dzisiaj = DateTime.Now;
+            TimeSpan roznica = dzisiaj - zatrudnienie;
+            string test = $"Członek naszego zespołu już z nami {roznica.Days} dni!!!";
+
+
+
+            //Act
+            TrenerFactory fabryka = new TrenerFactory();
+            var TrenerMiesiaca = fabryka.CreatePracownik(TrenerPoID.Andrzej_Kwitek);
+            //Assert
+            Assert.AreEqual(test, TrenerMiesiaca.StazPracy());
+
+
+        }
+
     }
 }
