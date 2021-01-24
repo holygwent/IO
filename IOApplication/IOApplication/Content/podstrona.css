@@ -1,0 +1,41 @@
+﻿.bg-primary {
+    color: #111111;
+    background-color: #fafafa;
+}
+
+.full-page {
+    height: 100vh;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+a:link {
+    color: #111111;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #111111;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #111111;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: #111111;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.full-page {
+    height: 100vh;
+}
