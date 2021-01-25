@@ -3,10 +3,6 @@
     background-color: #fafafa;
 }
 
-.full-page {
-    height: 100vh;
-}
-
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -34,8 +30,4 @@ a:active {
     color: #111111;
     background-color: transparent;
     text-decoration: none;
-}
-
-.full-page {
-    height: 100vh;
 }
