@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fad943b024f94443877124064bde3bd3" Name="Diagram1">
+        <EntityTypeShape EntityType="SiłowniaNamespace2.Karnet" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiłowniaNamespace2.Klient" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiłowniaNamespace2.Pracownicy" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiłowniaNamespace2.Trener" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SiłowniaNamespace2.Zajecia" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="SiłowniaNamespace2.FK_Klient_ToKarnet" ManuallyRouted="false" />
+        <AssociationConnector Association="SiłowniaNamespace2.FK_Klient_ToZajecia" ManuallyRouted="false" />
+        <AssociationConnector Association="SiłowniaNamespace2.FK_Trener_ToZajecia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

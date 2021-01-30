@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SiłowniaModelStoreContainer" CdmEntityContainer="SiłowniaEntities">
+    <EntitySetMapping Name="Administrator">
+      <EntityTypeMapping TypeName="SiłowniaModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klient">
+      <EntityTypeMapping TypeName="SiłowniaModel.Klient">
+        <MappingFragment StoreEntitySet="Klient">
+          <ScalarProperty Name="IdKlienta" ColumnName="IdKlienta" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DataDoladowania" ColumnName="DataDoladowania" />
+          <ScalarProperty Name="Karnet" ColumnName="Karnet" />
+          <ScalarProperty Name="DataWygasniecia" ColumnName="DataWygasniecia" />
+          <ScalarProperty Name="IdZajecia" ColumnName="IdZajecia" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pracownicy">
+      <EntityTypeMapping TypeName="SiłowniaModel.Pracownicy">
+        <MappingFragment StoreEntitySet="Pracownicy">
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+          <ScalarProperty Name="DataUrodzenia" ColumnName="DataUrodzenia" />
+          <ScalarProperty Name="DataZatrudnienia" ColumnName="DataZatrudnienia" />
+          <ScalarProperty Name="NrBankowy" ColumnName="NrBankowy" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trener">
+      <EntityTypeMapping TypeName="SiłowniaModel.Trener">
+        <MappingFragment StoreEntitySet="Trener">
+          <ScalarProperty Name="IdTrener" ColumnName="IdTrener" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+          <ScalarProperty Name="DataUrodzenia" ColumnName="DataUrodzenia" />
+          <ScalarProperty Name="DataZatrudnienia" ColumnName="DataZatrudnienia" />
+          <ScalarProperty Name="IdZajecia" ColumnName="IdZajecia" />
+          <ScalarProperty Name="NrBankowy" ColumnName="NrBankowy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zajecia">
+      <EntityTypeMapping TypeName="SiłowniaModel.Zajecia">
+        <MappingFragment StoreEntitySet="Zajecia">
+          <ScalarProperty Name="IdZajecia" ColumnName="IdZajecia" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Godzina" ColumnName="Godzina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Karnet">
+      <EntityTypeMapping TypeName="SiłowniaModel.Karnet">
+        <MappingFragment StoreEntitySet="Karnet">
+          <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

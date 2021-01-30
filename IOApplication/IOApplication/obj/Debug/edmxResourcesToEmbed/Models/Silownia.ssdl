@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiłowniaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Haslo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Karnet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Dni" Type="int" Nullable="false" />
+    <Property Name="Koszt" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klient">
+    <Key>
+      <PropertyRef Name="IdKlienta" />
+    </Key>
+    <Property Name="IdKlienta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Miasto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KodPocztowy" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DataDoladowania" Type="date" Nullable="false" />
+    <Property Name="Karnet" Type="int" Nullable="false" />
+    <Property Name="DataWygasniecia" Type="date" />
+    <Property Name="IdZajecia" Type="int" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Haslo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pracownicy">
+    <Key>
+      <PropertyRef Name="IdPracownika" />
+    </Key>
+    <Property Name="IdPracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Miasto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KodPocztowy" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Pesel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="DataUrodzenia" Type="date" Nullable="false" />
+    <Property Name="DataZatrudnienia" Type="date" Nullable="false" />
+    <Property Name="NrBankowy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Haslo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Trener">
+    <Key>
+      <PropertyRef Name="IdTrener" />
+    </Key>
+    <Property Name="IdTrener" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Imie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Miasto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KodPocztowy" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Kraj" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Pesel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="DataUrodzenia" Type="date" Nullable="false" />
+    <Property Name="DataZatrudnienia" Type="date" Nullable="false" />
+    <Property Name="IdZajecia" Type="int" Nullable="false" />
+    <Property Name="NrBankowy" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zajecia">
+    <Key>
+      <PropertyRef Name="IdZajecia" />
+    </Key>
+    <Property Name="IdZajecia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Godzina" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Klient_ToKarnet">
+    <End Role="Karnet" Type="Self.Karnet" Multiplicity="1" />
+    <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Karnet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Klient">
+        <PropertyRef Name="Karnet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Klient_ToZajecia">
+    <End Role="Zajecia" Type="Self.Zajecia" Multiplicity="1" />
+    <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zajecia">
+        <PropertyRef Name="IdZajecia" />
+      </Principal>
+      <Dependent Role="Klient">
+        <PropertyRef Name="IdZajecia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trener_ToZajecia">
+    <End Role="Zajecia" Type="Self.Zajecia" Multiplicity="1" />
+    <End Role="Trener" Type="Self.Trener" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zajecia">
+        <PropertyRef Name="IdZajecia" />
+      </Principal>
+      <Dependent Role="Trener">
+        <PropertyRef Name="IdZajecia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SiłowniaModelStoreContainer">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Karnet" EntityType="Self.Karnet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trener" EntityType="Self.Trener" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zajecia" EntityType="Self.Zajecia" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Klient_ToKarnet" Association="Self.FK_Klient_ToKarnet">
+      <End Role="Karnet" EntitySet="Karnet" />
+      <End Role="Klient" EntitySet="Klient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Klient_ToZajecia" Association="Self.FK_Klient_ToZajecia">
+      <End Role="Zajecia" EntitySet="Zajecia" />
+      <End Role="Klient" EntitySet="Klient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trener_ToZajecia" Association="Self.FK_Trener_ToZajecia">
+      <End Role="Zajecia" EntitySet="Zajecia" />
+      <End Role="Trener" EntitySet="Trener" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<IOApplication.Models.Karnet>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/podstrona.css")
+
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
+
+            <h2>Karnety</h2>
+
+            <button>@Html.ActionLink("Dodaj", "Create")</button>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dni)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Koszt)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dni)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Koszt)
+                        </td>
+                        <td>
+                            <button>@Html.ActionLink("Edytuj", "Edit", new { id = item.Id })</button>
+                            <button>@Html.ActionLink("Szczegóły", "Details", new { id = item.Id })</button>
+                            <button>@Html.ActionLink("Usuń", "Delete", new { id = item.Id })</button>
+
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

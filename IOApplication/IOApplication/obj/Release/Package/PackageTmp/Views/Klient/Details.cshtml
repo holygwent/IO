@@ -1,0 +1,130 @@
+﻿@model IOApplication.Models.Klient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miasto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miasto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KodPocztowy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KodPocztowy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kraj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kraj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDoladowania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDoladowania)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataWygasniecia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataWygasniecia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Haslo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Haslo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zajecia.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Karnet1.Dni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Karnet1.Dni)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.IdKlienta }) |
+    @Html.ActionLink("Wróć do listy", "Index")
+</p>

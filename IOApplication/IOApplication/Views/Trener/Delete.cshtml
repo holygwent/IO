@@ -1,0 +1,137 @@
+﻿@model IOApplication.Models.Trener
+
+@{
+    ViewBag.Title = "Delete";
+}
+@Styles.Render("~/Content/podstrona.css")
+
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
+
+            <h2>Usuń</h2>
+
+            <h3>Napewno chcesz usuąć tego trenera?</h3>
+            <div>
+                <h4>Trener</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Imie)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Imie)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nazwisko)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Nazwisko)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Adres)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Adres)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Miasto)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Miasto)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.KodPocztowy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.KodPocztowy)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Kraj)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Kraj)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Telefon)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Pesel)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Pesel)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataUrodzenia)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DataUrodzenia)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataZatrudnienia)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DataZatrudnienia)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NrBankowy)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NrBankowy)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Zajecia.Nazwa)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Usuń" /> |
+                        <button>@Html.ActionLink("Wróć do listy", "Index")</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

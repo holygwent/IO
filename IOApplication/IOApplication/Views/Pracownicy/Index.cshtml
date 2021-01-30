@@ -1,0 +1,72 @@
+﻿@model IEnumerable<IOApplication.Models.Pracownicy>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/podstrona.css")
+
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
+
+            <h2>Lista Pracowników</h2>
+
+            <button>@Html.ActionLink("Dodaj Pracownika", "Create")</button>
+            <div>
+                @using (Html.BeginForm("Index", "Pracownicy", FormMethod.Get))
+                {
+                    @Html.TextBox("searching")
+                    <input type="submit" value="Szukaj" />
+                    <button>@Html.ActionLink("Wyczyść", "Index")</button>
+
+                }
+            </div>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Imie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nazwisko)
+                    </th>
+
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </th>
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Imie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwisko)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefon)
+                        </td>
+
+                        <td>
+                            <button>@Html.ActionLink("Edytuj", "Edit", new { id = item.IdPracownika })</button>
+                            <button>@Html.ActionLink("Szczegóły", "Details", new { id = item.IdPracownika })</button>
+                            <button>@Html.ActionLink("Usuń", "Delete", new { id = item.IdPracownika })</button>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

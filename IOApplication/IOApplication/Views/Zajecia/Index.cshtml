@@ -1,0 +1,55 @@
+﻿@model IEnumerable<IOApplication.Models.Zajecia>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/podstrona.css")
+
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
+
+            <h2>Lista Zajęć</h2>
+
+            <button>@Html.ActionLink("Dodaj Zajęcia", "Create")</button>
+            <div>
+                @using (Html.BeginForm("Index", "Zajecia", FormMethod.Get))
+                {
+                    @Html.TextBox("searching")
+                    <input type="submit" value="szukaj" />
+                    <button>@Html.ActionLink("Wyczyść", "Index")</button>
+
+                }
+            </div>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nazwa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Godzina)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Godzina)
+                        </td>
+                        <td>
+                            <button>@Html.ActionLink("Edytuj", "Edit", new { id = item.IdZajecia })</button>
+                            <button>@Html.ActionLink("Szczegóły", "Details", new { id = item.IdZajecia })</button>
+                            <button>@Html.ActionLink("Usuń", "Delete", new { id = item.IdZajecia })</button>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
