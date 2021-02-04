@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Mateusz\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Mateusz\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_IOApplication.-1072841741.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Mateusz\Documents\GitHub\IO\IOApplication" t="IncludeFlat">
+      <e p="IOApplication" t="IncludeRecursive">
+        <e p="App_Data" t="Include" />
+        <e p="App_Start" t="Include">
+          <e p="BundleConfig.cs" t="Include" />
+          <e p="FilterConfig.cs" t="Include" />
+          <e p="RouteConfig.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Content" t="Include">
+          <e p="bootstrap-theme.css" t="Include" />
+          <e p="bootstrap-theme.min.css" t="Include" />
+          <e p="bootstrap.css" t="Include" />
+          <e p="bootstrap.min.css" t="Include" />
+          <e p="Csharp" t="Include">
+            <e p="CennikModel" t="Include">
+              <e p="Component" t="Include">
+                <e p="Cennik.cs" t="Include" />
+              </e>
+              <e p="ConcreteComponent" t="Include">
+                <e p="Days180Component.cs" t="Include" />
+                <e p="Days30Component.cs" t="Include" />
+                <e p="Days360Component.cs" t="Include" />
+                <e p="Days60Component.cs" t="Include" />
+              </e>
+              <e p="ConcreteZajeciaDecorator" t="Include">
+                <e p="BoksDecorator.cs" t="Include" />
+                <e p="FitnessDecorator.cs" t="Include" />
+                <e p="JogaDecorator.cs" t="Include" />
+                <e p="TaniecDecorator.cs" t="Include" />
+              </e>
+              <e p="Decorator" t="Include">
+                <e p="CennikDecorator.cs" t="Include" />
+              </e>
+              <e p="ListaCennikow" t="Include">
+                <e p="ListaCennikow.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Fabryka" t="Include">
+              <e p="TrenerFactory.cs" t="Include" />
+            </e>
+          </e>
+          <e p="podstrona.css" t="Include" />
+          <e p="profilowa.css" t="Include" />
+          <e p="Site.css" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="HomeController.cs" t="Include" />
+          <e p="KarnetController.cs" t="Include" />
+          <e p="KlientController.cs" t="Include" />
+          <e p="PracownicyController.cs" t="Include" />
+          <e p="TrenerController.cs" t="Include" />
+          <e p="ZajeciaController.cs" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+        <e p="fonts" t="Include">
+          <e p="glyphicons-halflings-regular.eot" t="Include" />
+          <e p="glyphicons-halflings-regular.svg" t="Include" />
+          <e p="glyphicons-halflings-regular.ttf" t="Include" />
+          <e p="glyphicons-halflings-regular.woff" t="Include" />
+          <e p="glyphicons-halflings-regular.woff2" t="Include" />
+        </e>
+        <e p="Global.asax" t="Include" />
+        <e p="Global.asax.cs" t="Include" />
+        <e p="IOApplication.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Karnet.cs" t="Include" />
+          <e p="Klient.cs" t="Include" />
+          <e p="Pracownicy.cs" t="Include" />
+          <e p="Silownia2.Context.cs" t="Include" />
+          <e p="Silownia2.Context.tt" t="Include" />
+          <e p="Silownia2.cs" t="Include" />
+          <e p="Silownia2.Designer.cs" t="Include" />
+          <e p="Silownia2.edmx" t="Include" />
+          <e p="Silownia2.edmx.diagram" t="Include" />
+          <e p="Silownia2.tt" t="Include" />
+          <e p="Trener.cs" t="Include" />
+          <e p="Zajecia.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="IOApplication20201204104429 - Web Deploy.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="bootstrap.js" t="Include" />
+          <e p="bootstrap.min.js" t="Include" />
+          <e p="jquery-3.4.1.intellisense.js" t="Include" />
+          <e p="jquery-3.4.1.js" t="Include" />
+          <e p="jquery-3.4.1.min.js" t="Include" />
+          <e p="jquery-3.4.1.min.map" t="Include" />
+          <e p="jquery-3.4.1.slim.js" t="Include" />
+          <e p="jquery-3.4.1.slim.min.js" t="Include" />
+          <e p="jquery-3.4.1.slim.min.map" t="Include" />
+          <e p="jquery.validate-vsdoc.js" t="Include" />
+          <e p="jquery.validate.js" t="Include" />
+          <e p="jquery.validate.min.js" t="Include" />
+          <e p="jquery.validate.unobtrusive.js" t="Include" />
+          <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+          <e p="modernizr-2.8.3.js" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Karnet" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Klient" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="FiltrLapsed.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Pracownicy" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+          <e p="Trener" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Web.config" t="Include" />
+          <e p="Zajecia" t="Include">
+            <e p="Create.cshtml" t="Include" />
+            <e p="Delete.cshtml" t="Include" />
+            <e p="Details.cshtml" t="Include" />
+            <e p="Edit.cshtml" t="Include" />
+            <e p="Index.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="Web.config" t="Include" />
+        <e p="Web.Debug.config" t="Include" />
+        <e p="Web.Release.config" t="Include" />
+      </e>
+      <e p="IOApplication.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+        <e p="MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+        <e p="MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+        <e p="MSTest.TestAdapter.2.1.1\build\_common\pl" t="Include">
+          <e p="Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll" t="Include" />
+          <e p="Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll" t="Include" />
+          <e p="Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll" t="Include" />
+        </e>
+      </e>
+      <e p="Test_darek" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Test_darek.csproj" t="IncludeRecursive" />
+        <e p="TestDecorator.cs" t="Include" />
+        <e p="TestFactory.cs" t="Include" />
+        <e p="testJednostkowy.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

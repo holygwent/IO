@@ -11,7 +11,8 @@ namespace IOApplication.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Zajecia
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,7 +23,11 @@ namespace IOApplication.Models
         }
     
         public int IdZajecia { get; set; }
+        [Display(Name = "Nazwa")]
+        [Required(ErrorMessage = "Podaj nazwę zajęc")]
         public string Nazwa { get; set; }
+        [Display(Name = "Godzina")]
+        [Required(ErrorMessage = "Podaj godzin� zaj�c")]
         public System.TimeSpan Godzina { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

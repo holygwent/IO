@@ -11,22 +11,53 @@ namespace IOApplication.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Trener
     {
         public int IdTrener { get; set; }
+        [Display(Name = "Imie")]
+        [Required(ErrorMessage = "Podaj imię")]
         public string Imie { get; set; }
+        [Display(Name = "Nazwisko")]
+        [Required(ErrorMessage = "Podaj nazwisko")]
         public string Nazwisko { get; set; }
+        [Display(Name = "Podaj adres")]
+        [Required(ErrorMessage = "Podaj adres")]
         public string Adres { get; set; }
+        [Display(Name = "Miasto")]
+        [Required(ErrorMessage = "Podaj Miasto")]
         public string Miasto { get; set; }
+        [Display(Name = "Kod Pocztowy")]
+        [RegularExpression(@"^(\d{2}-\d{3})|(\d{5})$", ErrorMessage = "Wprowadź prawidłowy kod pocztowy")]
+        [Required(ErrorMessage = "Podaj Kod Pocztowy")]
         public string KodPocztowy { get; set; }
+        [Display(Name = "Kraj")]
+        [Required(ErrorMessage = "Podaj Kraj")]
         public string Kraj { get; set; }
+        [Display(Name = "Email")]
+        [EmailAddress(ErrorMessage = "Podaj poprawny Email")]
+        [Required(ErrorMessage = "Podaj Email")]
         public string Email { get; set; }
+        [Display(Name = "Telefon")]
+        [RegularExpression(@"^(\d{2}\d{9})|(\d{9})$", ErrorMessage = "Wprowadź prawidłowy numer telefonu")]
         public string Telefon { get; set; }
+        [Display(Name = "Pesel")]
+        [Required(ErrorMessage = "Podaj PESEL")]
+        [RegularExpression(@"^(\d{11})$", ErrorMessage = "Wprowadź prawidłowy numer Pesel")]
         public string Pesel { get; set; }
+        [Display(Name = "DataUrodzenia")]
+        [Required(ErrorMessage = "Podaj Date urodzenia")]
+        [DataType(DataType.Date)]
         public System.DateTime DataUrodzenia { get; set; }
+        [Display(Name = "DataZatrudnienia")]
+        [Required(ErrorMessage = "Podaj Date zatrudnienia")]
+        [DataType(DataType.Date)]
         public System.DateTime DataZatrudnienia { get; set; }
         public int IdZajecia { get; set; }
+        [Display(Name = "NrBankowy")]
+        [RegularExpression(@"^(\d{26})$", ErrorMessage = "Wprowadź prawidłowy numer bankowy")]
+        [Required(ErrorMessage = "Podaj numer konta bankowego")]
         public string NrBankowy { get; set; }
     
         public virtual Zajecia Zajecia { get; set; }

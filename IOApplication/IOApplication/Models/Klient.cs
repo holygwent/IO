@@ -15,10 +15,10 @@ namespace IOApplication.Models
 
     public partial class Klient
     {
-        [Display(Name = "ID Klienta")]
         public int IdKlienta { get; set; }
-        [Display(Name = "Imie")]
-        [Required(ErrorMessage = "Podaj imie")]
+
+        [Display(Name = "Imię")]
+        [Required(ErrorMessage = "Podaj imię")]
         public string Imie { get; set; }
         [Display(Name = "Nazwisko")]
         [Required(ErrorMessage = "Podaj Nazwisko")]
@@ -28,34 +28,41 @@ namespace IOApplication.Models
         public string Adres { get; set; }
         [Display(Name = "Miasto")]
         [Required(ErrorMessage = "Podaj Miasto")]
+ 
         public string Miasto { get; set; }
         [Display(Name = "Kod Pocztowy")]
+        [RegularExpression(@"^(\d{2}-\d{3})|(\d{5})$", ErrorMessage = "Wprowadź prawidłowy kod pocztowy")]
         [Required(ErrorMessage = "Podaj Kod Pocztowy")]
         public string KodPocztowy { get; set; }
         [Display(Name = "Kraj")]
         [Required(ErrorMessage = "Podaj Kraj")]
         public string Kraj { get; set; }
         [Display(Name = "Telefon")]
-        [Required(ErrorMessage = "Podaj Telefon")]
+        [RegularExpression(@"^(\d{2}\d{9})|(\d{9})$", ErrorMessage = "Wprowadź prawidłowy numer telefonu")]
         public string Telefon { get; set; }
+
         [Display(Name = "Email")]
         [EmailAddress(ErrorMessage = "Podaj poprawny Email")]
         [Required(ErrorMessage = "Podaj Email")]
         public string Email { get; set; }
-        [Display(Name = "Data do�adowania")]
+        [Display(Name = "Data doładowania")]
         [Required(ErrorMessage = "Podaj Date")]
         [DataType(DataType.Date)]
         public System.DateTime DataDoladowania { get; set; }
+        [Display(Name = "Karnet")]
+        [Required(ErrorMessage = "Podaj Karnet")]
         public int Karnet { get; set; }
-        [Display(Name = "Data wyga�ni�cia")]
+        [Display(Name = "Data wygaśnięcia")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> DataWygasniecia { get; set; }
+        [Display(Name = "Zajęcia")]
         public int IdZajecia { get; set; }
         [Display(Name = "Login")]
         [Required(ErrorMessage = "Podaj Login")]
         public string Login { get; set; }
-        [Display(Name = "Has�o")]
+        [Display(Name = "Hasło")]
         [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Podaj Hasło")]
         public string Haslo { get; set; }
     
         public virtual Karnet Karnet1 { get; set; }
