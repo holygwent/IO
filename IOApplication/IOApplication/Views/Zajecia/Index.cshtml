@@ -3,37 +3,53 @@
 @{
     ViewBag.Title = "Index";
 }
+@Styles.Render("~/Content/podstrona.css")
 
-<h2>Index</h2>
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nazwa)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Godzina)
-        </th>
-        <th></th>
-    </tr>
+            <h2>Lista Zajęć</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nazwa)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Godzina)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdZajecia }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdZajecia }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdZajecia })
-        </td>
-    </tr>
-}
+            <button>@Html.ActionLink("Dodaj Zajęcia", "Create")</button>
+            <div>
+                @using (Html.BeginForm("Index", "Zajecia", FormMethod.Get))
+                {
+                    @Html.TextBox("searching")
+                    <input type="submit" value="szukaj" />
+                    <button>@Html.ActionLink("Wyczyść", "Index")</button>
 
-</table>
+                }
+            </div>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nazwa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Godzina)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Godzina)
+                        </td>
+                        <td>
+                            <button>@Html.ActionLink("Edytuj", "Edit", new { id = item.IdZajecia })</button>
+                            <button>@Html.ActionLink("Szczegóły", "Details", new { id = item.IdZajecia })</button>
+                            <button>@Html.ActionLink("Usuń", "Delete", new { id = item.IdZajecia })</button>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

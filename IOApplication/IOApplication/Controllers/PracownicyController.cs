@@ -12,12 +12,57 @@ namespace IOApplication.Controllers
 {
     public class PracownicyController : Controller
     {
-        private SiłowniaEntities db = new SiłowniaEntities();
+        private SiłowniaEntities2 db = new SiłowniaEntities2();
 
         // GET: Pracownicy
-        public ActionResult Index()
+        public ActionResult Index(string searching)
         {
-            return View(db.Pracownicy.ToList());
+            var collection = from p in db.Pracownicy
+                             orderby p.Nazwisko ascending, p.Imie ascending
+                             where p != null
+                             select p;
+
+            if (!string.IsNullOrEmpty(searching))
+            {
+                if (searching.Contains(' '))
+                {
+                    string[] tab = new string[2];
+                    string firstName, lastName;
+                    tab = searching.Split(' ');
+                    if (tab[1] == null)
+                    {
+                        tab[1] = " ";
+                    }
+                    else if (tab[0] == null)
+                    {
+                        tab[0] = " ";
+                    }
+                    firstName = tab[0];
+                    lastName = tab[1];//wyjatek przy wpisaniu 1 słowa
+
+                    collection = from p in db.Pracownicy
+                                 orderby p.Nazwisko ascending, p.Imie ascending
+                                 where p.Nazwisko == lastName && p.Imie == firstName
+                                 select p;
+                    if (collection.ToList().Count == 0)
+                    {
+                        firstName = tab[1];
+                        lastName = tab[0];
+                        collection = from p in db.Pracownicy
+                                     orderby p.Nazwisko ascending, p.Imie ascending
+                                     where p.Nazwisko == lastName && p.Imie == firstName
+                                     select p;
+                    }
+                }
+                else
+                {
+                    collection = db.Pracownicy.Where(x => x.Imie == searching);
+                    if(collection.ToList().Count==0)
+                        collection = db.Pracownicy.Where(x => x.Nazwisko == searching);
+                }
+            }
+
+            return View(collection.ToList());
         }
 
         // GET: Pracownicy/Details/5

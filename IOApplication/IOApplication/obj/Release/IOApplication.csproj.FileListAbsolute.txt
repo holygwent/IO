@@ -172,7 +172,11 @@ C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\I
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.csproj.CopyComplete
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.dll
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.pdb
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.csprojAssemblyReference.cache
 >>>>>>> Stashed changes
+=======
+C:\Users\48502\source\repos\IOWlasciwe\IOApplication\IOApplication\obj\Release\IOApplication.csprojAssemblyReference.cache
+>>>>>>> main

@@ -1,0 +1,40 @@
+﻿@model IOApplication.Models.Karnet
+
+@{
+    ViewBag.Title = "Details";
+}
+@Styles.Render("~/Content/podstrona.css")
+
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
+
+            <h2>Szczegóły</h2>
+
+            <div>
+                <h4>Karnet</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Dni)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Dni)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Koszt)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Koszt)
+                    </dd>
+
+                </dl>
+            </div>
+            <button>@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</button>
+            <button>@Html.ActionLink("Wróć do listy", "Index")</button>
+        </div>
+    </div>
+</div>

@@ -1,31 +1,276 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "GET FIT";
 }
+@Styles.Render("~/Content/profilowa.css")
+@model IOApplication.Models.CennikModel.ListaCennikow.ListaCennikow
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<header class="masthead flex">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">
+                <h1 class="text-uppercase text-custom justify-content-center mb-10">
+                    "BE STRONGER THAN YOUR EXCUSES."
+                </h1>
+                <button class="mt-2" data-hover="DOŁĄCZ DO NAS"><div>DOŁĄCZ DO NAS</div></button>
+            </div>
+        </div>
+    </div>
+</header>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10 text-center ">
+                <h1 class="text-white">POKONAJ SWOJE LIMITY<br />ODKRYJ LEPSZA WERSJE SIEBIE</h1>
+                <hr class="divider mt-2 mb-2" />
+                <p class="text-grey mb-2">
+                    <b class="text-custom">GET FIT</b> to nowoczesna siłownia o powierzchni 1000m<sup>2</sup>  wyposażona w fabrycznie nowy, markowy sprzęt. Oferujemy aż pięć profesjonalnie wyposażonych i przestronnych stref, m.in. strefę cardio, strefę wolnych ciężarów, strefę maszyn oporowych, strefę treningu funkcjonalnego oraz strefę fitness, w której zajęcia prowadzone są od poniedziałku do soboty.
+                </p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="mt-5">
+                            <a href="#" class="socials">
+                                <i class="fas fa-4x fa-dumbbell text-custom mb-2"></i>
+                                <h3 class="h4 mb-2 text-white socials">WYSOKIEJ JAKOŚCI SPRZĘT</h3>
+                            </a>
+                            <p class="text-grey mb-0">
+                                Profesjonalny sprzęt najwyższej jakości marki Marbo Sport.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="mt-5">
+                            <a href="#" class="socials">
+                                <i class="fas fa-4x fa-users text-custom mb-2"></i>
+                                <h3 class="h4 mb-2 text-white socials">GRUPOWE ZAJĘCIA FITNESS</h3>
+                            </a>
+                            <p class="text-grey mb-0">
+                                Codziennie odbywają się grupowe zajęcia fitness prowadzone przez naszych najlepszych trenerów.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="mt-5">
+                            <a href="#" class="socials">
+                                <i class="fas fa-4x fa-user-check text-custom mb-2"></i>
+                                <h3 class="h4 mb-2 text-white socials">DOŚWIADCZENI TRENERZY</h3>
+                            </a>
+                            <p class="text-grey mb-0">
+                                Oferujemy treningi personalne z najbardziej doświadczonymi trenerami w Polsce.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
+                        <div class="mt-5">
+                            <a href="#" class="socials">
+                                <i class="fas fa-4x fa-heartbeat text-custom mb-2"></i>
+                                <h3 class="h4 mb-2 text-white socials">UNIKALNY PLAN DOSTOSOWANY DO TWOICH POTRZEB</h3>
+                            </a>
+                            <p class="text-grey mb-0">
+                                Stworzymy unikalny plan treningowy oraz żywieniowy dostosowany do twoich celów.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</section>
+
+<section class="bg-secondary" id="trener">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center mt-5 mb-5">
+                        <h1 class="text-white">POZNAJ NASZYCH TRENERÓW</h1>
+                        <hr class="divider mt-2 mb-2" />
+                        <p class="text-grey mb-0">
+                            <b class="text-custom">GET FIT</b> to nie tylko siłownia ale również wykwalifikowany zespół trenerów personalnych, którzy z łatwością dobiorą odpowiedni trening każdemu, niezależnie od wieku, stanu zdrowia i kondycji ogólnej.
+                        </p>
+                        <button class="mt-2" data-hover="PRZEJDŹ DALEJ"><div>POZNAJ TRENERÓW</div></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 text-center p-0">
+                <img class="fzimg" src="~/Content/img1.jpg">
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</section>
+
+<section class="bg-primary" id="trenermiesiaca">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8 mt-10 mb-10 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 text-right">
+                        <img class="roundimg" src="~/Content/trenermiesiaca.jpg" />
+                    </div>
+                    <div class="col-lg-6 text-left">
+                        <h2 class="text-white">TRENER MIESIĄCA</h2>
+                        <h4 class="text-custom">
+                            @Model.trenerMiesiaca.Imie @Model.trenerMiesiaca.Nazwisko
+                        </h4>
+                        <p class="text-grey mb-0 text-left">
+                            @Model.trenerMiesiaca.StazPracy()
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<section class="bg-secondary" id="karnet">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 text-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+                    <h1 class="text-white">DOSTĘPNE PLANY TRENIGNOWE W NASZEJ OFERCIE</h1>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                    <button class="mt-2" data-hover="WYBIERZ SWÓJ PLAN"><div>DOWIEDZ SIĘ WIĘCEJ</div></button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mb-10 text-center">
+                <div class="col-lg-4 col-md-6 col-sm-6 text-center mt-5">
+                    <div class="p-3 bg-tertiary">
+                        <h1 class="text-white">
+                            59
+                            <sup> PLN</sup>
+                        </h1>
+                        <h6 class="text-grey">KARNET MIESIECZNY</h6>
+                        <hr class="divider mt-2 mb-2" />
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 text-center">
+                                <h4 class="text-white b mb-1">BEGINNER</h4>
+                                <p class="text-grey mb-2">
+                                    Ograniczony dostęp tylko do strefy wolnych ciężarów oraz cardio. Treningi personalne oraz grupowe zajęcia fitness płatne dodatkowo.
+                                </p>
+                                <button class="mt-2" data-hover="KUP KARNET"><div>WYBIERZ PLAN</div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 text-center mt-5">
+                    <div class="p-3 bg-tertiary">
+                        <h1 class="text-white">
+                            89
+                            <sup> PLN</sup>
+                        </h1>
+                        <h6 class="text-grey">KARNET MIESIECZNY</h6>
+                        <hr class="divider mt-2 mb-2" />
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                <h4 class="text-white b mb-1">INTERMEDIATE</h4>
+                                <p class="text-grey mb-2">
+                                    Dostęp do wszystkich oferowanych stref siłowni. Treningi personalne oraz grupowe zajęcia fitness płatne dodatkowo.
+                                </p>
+                                <button class="mt-2" data-hover="KUP KARNET"><div>WYBIERZ PLAN</div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 text-center mt-5">
+                    <div class="p-3 bg-tertiary">
+                        <h1 class="text-white">
+                            119
+                            <sup> PLN</sup>
+                        </h1>
+                        <h6 class="text-grey">KARNET MIESIECZNY</h6>
+                        <hr class="divider mt-2 mb-2" />
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                <h4 class="text-white b mb-1">ADVANCED</h4>
+                                <p class="text-grey mb-2">
+                                    Dostęp do wszystkich oferowanych stref siłowni. Jeden trening personalny oraz grupowe zajęcia fitness raz w tygodniu.
+                                </p>
+                                <button class="mt-2" data-hover="KUP KARNET"><div>WYBIERZ PLAN</div></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-primary" id="promocje">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 text-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+                    <h1 class="text-white">DOSTĘPNE PROMOCJE</h1>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                    <button class="mt-2" data-hover="ZOBACZ PROMOCJE"><div>DOWIEDZ SIĘ WIĘCEJ</div></button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-5 mb-10 text-center">
+                <div class="row justify-content-center align-items-center">
+                    @foreach (var item in Model.OdajListe())
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6 text-center">
+                            <div class="p-3 bg-tertiary mb-1">
+                                <h1 class="text-white">
+                                    @item.CalculateCost()
+                                    <sup> PLN</sup>
+                                </h1>
+                                <hr class="divider mt-2 mb-2" />
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
+                                        <p class="text-grey mb-2">
+                                            @item.GetName()
+                                        </p>
+                                        <button data-hover="KUP KARNET"><div>KUP KARNET</div></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section bg-secondary" id="info">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 text-center mt-10 mb-10">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 text-left">
+                    <h1 class="text-custom">GET FIT</h1>
+                    <p class="text-grey">
+                        Zapraszamy do odwiedzenia naszej placówki, jeżeli chcesz zacząć swoją przygodę ze sportem lub aktualnie trenujesz oraz na nasze media społecznościowe poniżej.
+                    </p>
+                    <p class="text-grey">
+                        <i class="fas fa-1x fa-phone text-grey mr-1"></i>883-990-234
+                    </p>
+                    <p class="text-grey">
+                        <i class="fas fa-1x fa-map-marker-alt text-grey mr-1"></i>Warszawska 69B, 43-300 Bielsko-Biała
+                    </p>
+                    <p class="text-grey">
+                        <i class="fas fa-1x fa-clock text-grey mr-1"></i>Pon-Sob | 6:00-22:00
+                    </p>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12 text-right">
+                    <form action="#">
+                        <h4 class="text-grey">Masz pytanie? Napisz do nas!</h4>
+                        <div>
+                            <input type="text" id="email" name="email" placeholder="Adres e-mail...">
+                        </div>
+                        <div>
+                            <textarea id="pytanie" name="pytanie" placeholder="Twoja wiadomość..." style="height:100px"></textarea>
+                        </div>
+                        <button data-hover="WYŚLIJ"><div>ZADAJ PYTANIE</div></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

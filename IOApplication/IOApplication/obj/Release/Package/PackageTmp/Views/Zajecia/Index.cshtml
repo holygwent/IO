@@ -4,11 +4,28 @@
     ViewBag.Title = "Index";
 }
 
+<<<<<<< HEAD
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+=======
+<h2>Lista Zajęć</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Zajęcia", "Create")
+</p>
+<div>
+    @using (Html.BeginForm("Index", "Zajecia", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść", "Index")</button>
+
+    }
+</div>
+>>>>>>> main
 <table class="table">
     <tr>
         <th>
@@ -29,9 +46,15 @@
             @Html.DisplayFor(modelItem => item.Godzina)
         </td>
         <td>
+<<<<<<< HEAD
             @Html.ActionLink("Edit", "Edit", new { id=item.IdZajecia }) |
             @Html.ActionLink("Details", "Details", new { id=item.IdZajecia }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.IdZajecia })
+=======
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.IdZajecia }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.IdZajecia }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.IdZajecia })
+>>>>>>> main
         </td>
     </tr>
 }

@@ -3,128 +3,134 @@
 @{
     ViewBag.Title = "Details";
 }
+@Styles.Render("~/Content/podstrona.css")
 
-<h2>Details</h2>
+<div class="container full-page">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mt-10 mb-10">
 
-<div>
-    <h4>Pracownicy</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Imie)
-        </dt>
+            <h2>Szczegóły</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.Imie)
-        </dd>
+            <div>
+                <h4>Pracownicy</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Imie)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nazwisko)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Imie)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nazwisko)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nazwisko)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Adres)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nazwisko)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Adres)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Adres)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Miasto)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Adres)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Miasto)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Miasto)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.KodPocztowy)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Miasto)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.KodPocztowy)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.KodPocztowy)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Kraj)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.KodPocztowy)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Kraj)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Kraj)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Kraj)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefon)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefon)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Pesel)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Telefon)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Pesel)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Pesel)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataUrodzenia)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Pesel)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataUrodzenia)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataUrodzenia)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DataZatrudnienia)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataUrodzenia)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DataZatrudnienia)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataZatrudnienia)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NrBankowy)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DataZatrudnienia)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NrBankowy)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NrBankowy)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Login)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NrBankowy)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Login)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Login)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Haslo)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Login)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Haslo)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Haslo)
+                    </dt>
 
-    </dl>
+                    <dd>
+                        @Html.DisplayFor(model => model.Haslo)
+                    </dd>
+
+                </dl>
+            </div>
+            <button>@Html.ActionLink("Edytuj", "Edit", new { id = Model.IdPracownika })</button>
+            <button>@Html.ActionLink("Wróć do listy", "Index")</button>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPracownika }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -8,6 +8,14 @@
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Haslo" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Karnet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Dni" Type="int" Nullable="false" />
+    <Property Name="Koszt" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Klient">
     <Key>
       <PropertyRef Name="IdKlienta" />
@@ -75,6 +83,18 @@
     <Property Name="Nazwa" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Godzina" Type="time" Precision="7" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Klient_ToKarnet">
+    <End Role="Karnet" Type="Self.Karnet" Multiplicity="1" />
+    <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Karnet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Klient">
+        <PropertyRef Name="Karnet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Klient_ToZajecia">
     <End Role="Zajecia" Type="Self.Zajecia" Multiplicity="1" />
     <End Role="Klient" Type="Self.Klient" Multiplicity="*" />
@@ -101,10 +121,15 @@
   </Association>
   <EntityContainer Name="SiłowniaModelStoreContainer">
     <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Karnet" EntityType="Self.Karnet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pracownicy" EntityType="Self.Pracownicy" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Trener" EntityType="Self.Trener" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zajecia" EntityType="Self.Zajecia" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Klient_ToKarnet" Association="Self.FK_Klient_ToKarnet">
+      <End Role="Karnet" EntitySet="Karnet" />
+      <End Role="Klient" EntitySet="Klient" />
+    </AssociationSet>
     <AssociationSet Name="FK_Klient_ToZajecia" Association="Self.FK_Klient_ToZajecia">
       <End Role="Zajecia" EntitySet="Zajecia" />
       <End Role="Klient" EntitySet="Klient" />

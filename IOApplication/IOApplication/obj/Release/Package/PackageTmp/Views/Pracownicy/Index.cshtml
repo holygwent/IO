@@ -4,11 +4,28 @@
     ViewBag.Title = "Index";
 }
 
+<<<<<<< HEAD
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+=======
+<h2>Lista Pracowników</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Pracownika", "Create")
+</p>
+<div>
+    @using (Html.BeginForm("Index", "Pracownicy", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść", "Index")</button>
+
+    }
+</div>
+>>>>>>> main
 <table class="table">
     <tr>
         <th>
@@ -17,6 +34,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Nazwisko)
         </th>
+<<<<<<< HEAD
         <th>
             @Html.DisplayNameFor(model => model.Adres)
         </th>
@@ -29,12 +47,17 @@
         <th>
             @Html.DisplayNameFor(model => model.Kraj)
         </th>
+=======
+        
+     
+>>>>>>> main
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Telefon)
         </th>
+<<<<<<< HEAD
         <th>
             @Html.DisplayNameFor(model => model.Pesel)
         </th>
@@ -53,6 +76,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Haslo)
         </th>
+=======
+       
+>>>>>>> main
         <th></th>
     </tr>
 
@@ -64,6 +90,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Nazwisko)
         </td>
+<<<<<<< HEAD
         <td>
             @Html.DisplayFor(modelItem => item.Adres)
         </td>
@@ -76,12 +103,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Kraj)
         </td>
+=======
+     
+>>>>>>> main
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Telefon)
         </td>
+<<<<<<< HEAD
         <td>
             @Html.DisplayFor(modelItem => item.Pesel)
         </td>
@@ -104,6 +135,13 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.IdPracownika }) |
             @Html.ActionLink("Details", "Details", new { id=item.IdPracownika }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.IdPracownika })
+=======
+        
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.IdPracownika }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.IdPracownika }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.IdPracownika })
+>>>>>>> main
         </td>
     </tr>
 }

@@ -1,5 +1,15 @@
-﻿using System;
+﻿
+
+using IOApplication.Content.Csharp.Fabryka;
+using IOApplication.Models.CennikModel;
+using IOApplication.Models.CennikModel.Component;
+using IOApplication.Models.CennikModel.ConcreteComponent;
+
+using IOApplication.Models.CennikModel.ConcreteZajeciaDecorator;
+using IOApplication.Models.CennikModel.ListaCennikow;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,8 +20,37 @@ namespace IOApplication.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            Cennik promocja = new Days60Component();
+           
+            promocja = new JogaDecorator(promocja);
+            promocja = new BoksDecorator(promocja);
+            promocja = new FitnessDecorator(promocja);
+
+            Cennik promocja2 = new Days180Component();
+          
+            promocja2 = new TaniecDecorator(promocja2);
+            promocja2 = new FitnessDecorator(promocja2);
+            promocja2 = new JogaDecorator(promocja2);
+
+            TrenerFactory fabryka = new TrenerFactory();
+            var TrenerMiesiaca = fabryka.CreatePracownik(TrenerPoID.Andrzej_Kwitek);
+
+            ListaCennikow lista = new ListaCennikow();
+
+            lista.DodajTreneraMiesiaca(TrenerMiesiaca);
+            lista.DodajDoListy(promocja);
+            lista.DodajDoListy(promocja2);
+           
+
+            return View(lista);
         }
+
+        private object TablicaCennikow()
+        {
+            throw new NotImplementedException();
+        }
+
         //do skopiowania usun jak skonczysz
         public ActionResult About()
         {

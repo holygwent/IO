@@ -4,11 +4,28 @@
     ViewBag.Title = "Index";
 }
 
+<<<<<<< HEAD
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+=======
+<h2>Lista Trenerów</h2>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create")
+</p>
+<div>
+    @using (Html.BeginForm("Index", "Trener", FormMethod.Get))
+    {
+        @Html.TextBox("searching")
+        <input type="submit" value="szukaj" />
+        <button>@Html.ActionLink("Wyczyść", "Index")</button>
+
+    }
+</div>
+>>>>>>> main
 <table class="table">
     <tr>
         <th>
@@ -17,6 +34,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Nazwisko)
         </th>
+<<<<<<< HEAD
         <th>
             @Html.DisplayNameFor(model => model.Adres)
         </th>
@@ -29,12 +47,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Kraj)
         </th>
+=======
+        
+>>>>>>> main
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Telefon)
         </th>
+<<<<<<< HEAD
         <th>
             @Html.DisplayNameFor(model => model.Pesel)
         </th>
@@ -47,6 +69,9 @@
         <th>
             @Html.DisplayNameFor(model => model.NrBankowy)
         </th>
+=======
+       
+>>>>>>> main
         <th>
             @Html.DisplayNameFor(model => model.Zajecia.Nazwa)
         </th>
@@ -61,6 +86,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Nazwisko)
         </td>
+<<<<<<< HEAD
         <td>
             @Html.DisplayFor(modelItem => item.Adres)
         </td>
@@ -73,12 +99,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Kraj)
         </td>
+=======
+        
+>>>>>>> main
         <td>
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Telefon)
         </td>
+<<<<<<< HEAD
         <td>
             @Html.DisplayFor(modelItem => item.Pesel)
         </td>
@@ -91,13 +121,22 @@
         <td>
             @Html.DisplayFor(modelItem => item.NrBankowy)
         </td>
+=======
+        
+>>>>>>> main
         <td>
             @Html.DisplayFor(modelItem => item.Zajecia.Nazwa)
         </td>
         <td>
+<<<<<<< HEAD
             @Html.ActionLink("Edit", "Edit", new { id=item.IdTrener }) |
             @Html.ActionLink("Details", "Details", new { id=item.IdTrener }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.IdTrener })
+=======
+            @Html.ActionLink("Edytuj", "Edit", new { id=item.IdTrener }) |
+            @Html.ActionLink("Szczegóły", "Details", new { id=item.IdTrener }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.IdTrener })
+>>>>>>> main
         </td>
     </tr>
 }
