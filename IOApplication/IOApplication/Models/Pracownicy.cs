@@ -15,22 +15,28 @@ namespace IOApplication.Models
     public partial class Pracownicy
     {
         public int IdPracownika { get; set; }
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe imię")]
         [Display(Name = "Imie")]
         [Required(ErrorMessage = "Podaj Imię")]
         public string Imie { get; set; }
+        
         [Display(Name = "Nazwisko")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe nazwisko")]
         [Required(ErrorMessage = "Podaj nazwisko")]
         public string Nazwisko { get; set; }
+       
         [Display(Name = "Podaj adres")]
         [Required(ErrorMessage = "Podaj adres")]
         public string Adres { get; set; }
         [Display(Name = "Miasto")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe Miasto")]
         [Required(ErrorMessage = "Podaj Miasto")]
         public string Miasto { get; set; }
         [Display(Name = "Kod Pocztowy")]
         [RegularExpression(@"^(\d{2}-\d{3})|(\d{5})$", ErrorMessage = "Wprowadź prawidłowy kod pocztowy")]
         public string KodPocztowy { get; set; }
         [Display(Name = "Kraj")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe Kraj")]
         [Required(ErrorMessage = "Podaj Kraj")]
         public string Kraj { get; set; }
         [Display(Name = "Email")]

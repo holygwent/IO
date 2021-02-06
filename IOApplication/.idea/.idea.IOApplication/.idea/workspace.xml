@@ -35,9 +35,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/IOApplication/Models/Karnet.cs" />
-        <option value="$PROJECT_DIR$/IOApplication/Models/Klient.cs" />
-        <option value="$PROJECT_DIR$/IOApplication/Models/Trener.cs" />
         <option value="$PROJECT_DIR$/IOApplication/Models/Zajecia.cs" />
+        <option value="$PROJECT_DIR$/IOApplication/Models/Trener.cs" />
+        <option value="$PROJECT_DIR$/IOApplication/Models/Klient.cs" />
         <option value="$PROJECT_DIR$/IOApplication/Models/Pracownicy.cs" />
       </list>
     </option>
@@ -83,13 +83,17 @@
       <option name="presentableId" value="Default" />
       <updated>1612457156490</updated>
       <workItem from="1612457158006" duration="688000" />
+      <workItem from="1612466428954" duration="189000" />
+      <workItem from="1612471715339" duration="281000" />
+      <workItem from="1612617417171" duration="2345000" />
+      <workItem from="1612629225755" duration="1088000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -101,27 +105,32 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1612457422956">
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom" timestamp="1612629910981">
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612457422956" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1612457422956">
+    <state width="1877" height="284" key="GridCell.Tab.0.bottom/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612629910981" />
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1612471998397" />
+    <state width="1877" height="284" key="GridCell.Tab.0.center" timestamp="1612629910981">
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612457422956" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1612457422956">
+    <state width="1877" height="284" key="GridCell.Tab.0.center/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612629910981" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1612471998397" />
+    <state width="1877" height="284" key="GridCell.Tab.0.left" timestamp="1612629910981">
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612457422956" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1612457422956">
+    <state width="1877" height="284" key="GridCell.Tab.0.left/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612629910981" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1612471998397" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right" timestamp="1612629910981">
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612457422956" />
+    <state width="1877" height="284" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1612629910981" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1612471998397" />
     <state x="1982" y="243" key="run.anything.popup" timestamp="1612457288117">
       <screen x="1366" y="0" width="1920" height="1050" />
     </state>

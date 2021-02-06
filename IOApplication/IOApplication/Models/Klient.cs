@@ -18,15 +18,18 @@ namespace IOApplication.Models
         public int IdKlienta { get; set; }
 
         [Display(Name = "Imię")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe imię")]
         [Required(ErrorMessage = "Podaj imię")]
         public string Imie { get; set; }
         [Display(Name = "Nazwisko")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe nazwisko")]
         [Required(ErrorMessage = "Podaj Nazwisko")]
         public string Nazwisko { get; set; }
         [Display(Name = "Adres")]
         [Required(ErrorMessage = "Podaj Adres")]
         public string Adres { get; set; }
         [Display(Name = "Miasto")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe imię")]
         [Required(ErrorMessage = "Podaj Miasto")]
  
         public string Miasto { get; set; }
@@ -35,10 +38,12 @@ namespace IOApplication.Models
         [Required(ErrorMessage = "Podaj Kod Pocztowy")]
         public string KodPocztowy { get; set; }
         [Display(Name = "Kraj")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowy kraj")]
         [Required(ErrorMessage = "Podaj Kraj")]
         public string Kraj { get; set; }
         [Display(Name = "Telefon")]
-        [RegularExpression(@"^(\d{2}\d{9})|(\d{9})$", ErrorMessage = "Wprowadź prawidłowy numer telefonu")]
+        [Required(ErrorMessage = "Podaj nr telefonu")]
+        [RegularExpression(@"^(\d{2}\d{9})|(\d{11})$", ErrorMessage = "Wprowadź prawidłowy numer telefonu")]
         public string Telefon { get; set; }
 
         [Display(Name = "Email")]

@@ -17,15 +17,18 @@ namespace IOApplication.Models
     {
         public int IdTrener { get; set; }
         [Display(Name = "Imie")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe imię")]
         [Required(ErrorMessage = "Podaj imię")]
         public string Imie { get; set; }
         [Display(Name = "Nazwisko")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe nazwisko")]
         [Required(ErrorMessage = "Podaj nazwisko")]
         public string Nazwisko { get; set; }
         [Display(Name = "Podaj adres")]
         [Required(ErrorMessage = "Podaj adres")]
         public string Adres { get; set; }
         [Display(Name = "Miasto")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowe miasto")]
         [Required(ErrorMessage = "Podaj Miasto")]
         public string Miasto { get; set; }
         [Display(Name = "Kod Pocztowy")]
@@ -33,6 +36,7 @@ namespace IOApplication.Models
         [Required(ErrorMessage = "Podaj Kod Pocztowy")]
         public string KodPocztowy { get; set; }
         [Display(Name = "Kraj")]
+        [RegularExpression(@"^([A-Za-z]{1,20})$", ErrorMessage = "Wprowadź prawidłowy kraj")]
         [Required(ErrorMessage = "Podaj Kraj")]
         public string Kraj { get; set; }
         [Display(Name = "Email")]
