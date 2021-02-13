@@ -133,6 +133,7 @@
     <Compile Include="Content\Csharp\CennikModel\ConcreteComponent\Days360Component.cs" />
     <Compile Include="Content\Csharp\CennikModel\ConcreteComponent\Days60Component.cs" />
     <Compile Include="Content\Csharp\Fabryka\TrenerFactory.cs" />
+    <Compile Include="Content\Csharp\FunkcjeStatyczne\FunkcjeLINQ.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KarnetController.cs" />
     <Compile Include="Controllers\KlientController.cs" />
